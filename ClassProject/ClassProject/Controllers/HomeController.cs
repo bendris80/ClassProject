@@ -3,30 +3,45 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using ClassProject.DAL;
+using ClassProject.Models;
+using ClassProject.ViewModels;
 
 namespace ClassProject.Controllers
 {
     public class HomeController : Controller
     {
+        private SchoolContext db = new SchoolContext();
+
         public ActionResult Index()
         {
-            ViewBag.Message = "Modify this template to jump-start your ASP.NET MVC application.";
+            ViewBag.Message = "Welcome to Contoso University!";
 
             return View();
         }
 
         public ActionResult About()
         {
-            ViewBag.Message = "Your app description page.";
-
-            return View();
+            //var data = from student in db.Students
+            //           group student by student.EnrollmentDate into dateGroup
+            //           select new EnrollmentDateGroup()
+            //           {
+            //               EnrollmentDate = dateGroup.Key,
+            //               StudentCount = dateGroup.Count()
+            //           };
+            var query = "SELECT EnrollmentDate, COUNT(*) AS StudentCount "
+                + "FROM Person "
+                + "WHERE EnrollmentDate IS NOT NULL "
+                + "GROUP BY EnrollmentDate";
+            var data = db.Database.SqlQuery<EnrollmentDateGroup>(query);
+            return View(data);
         }
 
-        public ActionResult Contact()
+        protected override void Dispose(bool disposing)
         {
-            ViewBag.Message = "Your contact page.";
-
-            return View();
+            db.Dispose();
+            base.Dispose(disposing);
         }
+
     }
 }
