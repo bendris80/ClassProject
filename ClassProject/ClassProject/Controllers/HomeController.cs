@@ -15,7 +15,7 @@ namespace ClassProject.Controllers
 
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to Contoso University!";
+            ViewBag.Message = "Welcome to Fountainhead College of Technology Data Portal";
 
             return View();
         }
