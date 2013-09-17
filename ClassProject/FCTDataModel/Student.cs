@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 namespace FCTDataModel
 {
     [Table("instructor")]
-    public class Instructor
+    public class Student
     {
         [Column("id"), Key]
         public int ID { get; set; }
@@ -18,6 +18,6 @@ namespace FCTDataModel
         [Column("dept_id")]
         public int DepartmentID { get; set; }
         [Column("hire_date")]
-        public DateTime HireDate { get; set; }
+        public DateTime EnrollmentDate { get; set; }
     }
 }
