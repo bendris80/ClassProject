@@ -35,6 +35,7 @@
     </Reference>
     <Reference Include="System" />
     <Reference Include="System.ComponentModel.DataAnnotations" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -43,17 +44,19 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Course.cs" />
-    <Compile Include="Department.cs" />
-    <Compile Include="Enrollment.cs" />
-    <Compile Include="Instructor.cs" />
-    <Compile Include="Person.cs" />
+    <Compile Include="DataModels\Author.cs" />
+    <Compile Include="DataModels\Course.cs" />
+    <Compile Include="DataModels\Department.cs" />
+    <Compile Include="DataModels\Enrollment.cs" />
+    <Compile Include="DataModels\Instructor.cs" />
+    <Compile Include="DataModels\Person.cs" />
+    <Compile Include="DataModels\Publisher.cs" />
+    <Compile Include="DataModels\Textbook.cs" />
+    <Compile Include="dbContext\FCTDataProvider.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Student.cs" />
+    <Compile Include="DataModels\Student.cs" />
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="DataModels\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
