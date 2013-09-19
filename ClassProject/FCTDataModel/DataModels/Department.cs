@@ -15,11 +15,5 @@ namespace FCTDataModel
         public int ID { get; set; }
         [Column("name")]
         public string Name { get; set; }
-        [Column("budget")]
-        public decimal? Budget { get; set; }
-        [Column("start_date")]
-        public DateTime StartDate { get; set; }
-        [Column("admin_id")]
-        public int? admin_id { get; set; }
     }
 }
