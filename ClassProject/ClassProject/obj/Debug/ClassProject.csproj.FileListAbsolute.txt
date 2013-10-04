@@ -197,3 +197,32 @@ C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassPr
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.csprojResolveAssemblyReference.cache
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\obj\Debug\ContosoUniversity.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\obj\Debug\ContosoUniversity.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.csprojResolveAssemblyReference.cache
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\Antlr3.Runtime.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\PagedList.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Data.SqlServerCe.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Data.SqlServerCe.Entity.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.WebRequest.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Http.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Optimization.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\WebGrease.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\PagedList.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.WebRequest.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Http.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.pdb

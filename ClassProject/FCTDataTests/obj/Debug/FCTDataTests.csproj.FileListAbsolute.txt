@@ -1,0 +1,10 @@
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataTests.dll.config
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataTests.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataTests.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\EntityFramework.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataModel.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataModel.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\EntityFramework.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.csprojResolveAssemblyReference.cache
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.pdb

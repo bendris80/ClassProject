@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
@@ -44,76 +45,65 @@ namespace FCTDataModel
             return true;
         }
 
-        #region Vendor
-        //public IEnumerable<Vendor> GetAllVendors()
-        //{
-        //    return db.Vendors;
-        //}
+        #region Student
+        public IEnumerable<Student> GetAllStudents()
+        {
+            return db.Students;
+        }
 
-        //public Vendor GetVendorbyID(int id)
-        //{
-        //    return db.Vendors.Where(v => v.ID == id).FirstOrDefault();
-        //}
+        public Student GetStudentbyID(int id)
+        {
+            return db.Students.Where(v => v.ID == id).FirstOrDefault();
+        }
 
-        //public Vendor GetVendorbyFamCode(string famref)
-        //{
-        //    return db.Vendors.Where(v => v.ProdFamRef == famref).FirstOrDefault();
-        //}
+        public bool AddStudent(Student v)
+        {
+            db.Students.Add(v);
+            if (!Save())
+            {
+                return false;
+            }
+            return true;
 
-        //public bool AddVendor(Vendor v)
-        //{
-        //    v.EnteredBy = _context.userid;
-        //    v.EnteredOn = DateTime.Now;
-        //    v.ModifiedBy = _context.userid;
-        //    v.ModifiedOn = DateTime.Now;
-        //    db.Vendors.Add(v);
-        //    if (!Save())
-        //    {
-        //        return false;
-        //    }
-        //    return true;
+        }
 
-        //}
+        public bool RemoveStudent(Student v)
+        {
+            if (!db.Students.Local.Contains(v))
+            {
+                db.Students.Attach(v);
+            }
+            db.Students.Remove(v);
+            if (!Save())
+            {
+                return false;
+            }
+            return true;
+        }
 
-        //public bool RemoveVendor(Vendor v)
-        //{
-        //    if (!db.Vendors.Local.Contains(v))
-        //    {
-        //        db.Vendors.Attach(v);
-        //    }
-        //    db.Vendors.Remove(v);
-        //    if (!Save())
-        //    {
-        //        return false;
-        //    }
-        //    return true;
-        //}
+        public bool UpdateStudent(Student v)
+        {
+            if (!db.Students.Local.Contains(v))
+            {
+                db.Students.Attach(v);
+            }
+            db.Entry<Student>(v).State = EntityState.Modified;
+            if (!Save())
+            {
+                return false;
+            }
+            return true;
 
-        //public bool UpdateVendor(Vendor v)
-        //{
-        //    if (!db.Vendors.Local.Contains(v))
-        //    {
-        //        db.Vendors.Attach(v);
-        //    }
-        //    v.ModifiedBy = _context.userid;
-        //    v.ModifiedOn = DateTime.Now;
-        //    db.Entry<Vendor>(v).State = EntityState.Modified;
-        //    if (!Save())
-        //    {
-        //        return false;
-        //    }
-        //    return true;
+        }
 
-        //}
-
-        //public IEnumerable<Vendor> FindVendors(Func<Vendor, bool> filter)
-        //{
-        //    if (filter == null)
-        //    {
-        //        return null;
-        //    }
-        //    return db.Vendors.Where(filter);
-        //}
+        public IEnumerable<Student> FindStudents(Func<Student, bool> filter)
+        {
+            if (filter == null)
+            {
+                return null;
+            }
+            return db.Students.Where(filter);
+        }
         #endregion
     }
 }

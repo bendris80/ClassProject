@@ -4,6 +4,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
+using ClassProject.Models;
 using FCTDataModel;
 
 namespace ClassProject.Controllers
@@ -13,12 +14,15 @@ namespace ClassProject.Controllers
         static BaseController()
         {
             #region Object Maps
-
+            Mapper.CreateMap<vmStudent, Student>();
+            Mapper.CreateMap<Student, vmStudent>();
+            Mapper.CreateMap<vmPerson, Person>();
+            Mapper.CreateMap<Person, vmPerson>();
             #endregion
         }
 
         private FCTDataManager _man;
-        protected FCTDataManager MarketingManager
+        protected FCTDataManager FCTManager
         {
             get
             {
@@ -29,6 +33,7 @@ namespace ClassProject.Controllers
                 return _man;
             }
         }
+
            /// <summary>
            /// TODO Call Dispose Methods for each Manager.
            /// </summary>
@@ -39,8 +44,8 @@ namespace ClassProject.Controllers
             {
                 if (_man != null)
                 {
-                    //_man.Codes.Dispose();
-                    //_man.Products.Dispose();
+                    _man.Students.Dispose();
+                    _man.People.Dispose();
                     //_man.Vendors.Dispose();
                     //_man = null;
                 }
