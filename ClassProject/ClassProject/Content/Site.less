@@ -1,4 +1,51 @@
-﻿/*----------------------------------------------------------
+﻿//#region other colors
+@border_color: #000000;
+@menu_color: #ffffff;
+@hover_color: #00b4ff;
+@active_color: #e8b11e;
+@main_color: #006951;
+@link_color: darken(#2d89ef, 20%);
+@column_color: #1996d0;
+@info_color: #0072c6;
+@warning_color: #ef2b2d;
+@generic_color: lighten(#919693, 30%);
+@form_color: #808080;
+@error_color: red;
+@required_color: #2d89ef;
+@item_highlight_color: #3399ff;
+@details_color: #000000;
+@details_label_color: #da532c;
+@helper_color: #007c03;
+//#endregion
+
+//#region action colors
+@veryhigh_color: red;
+@high_color: rgb(255, 133, 0);
+@medium_color: rgb(56, 201, 0);
+@normal_color: rgb(0, 61, 255);
+
+.veryhigh
+{
+    color: @veryhigh_color;
+}
+
+.high
+{
+    color: @high_color;
+}
+
+.medium
+{
+    color: @medium_color;
+}
+
+.normal
+{
+    color: @normal_color;
+}
+//#endregion
+
+/*----------------------------------------------------------
 The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
@@ -330,4 +377,72 @@ div#title {
 
 .tri-state {
     width: 6em;
+}
+
+
+.gridviewcontainer
+{
+    border: 1px solid #000000;
+}
+
+.gridview
+{
+    font-size: 10pt;
+
+    th
+    {
+        cursor: pointer;
+        text-align: left;
+
+        &:hover
+        {
+            .box-gradient(lighten(@column_color, 20%), @column_color);
+        }
+
+        &.sorted
+        {
+            .box-gradient(@column_color, lighten(@column_color, 10%));
+        }
+
+        span
+        {
+            font-size: 9pt;
+        }
+    }
+
+    tbody tr td:nth-child(even)
+    {
+        background-color: mix(#dae2ed, #ffffff);
+    }
+
+    tbody tr:nth-child(even)
+    {
+        background-color: #FFFFCC;
+
+        td:nth-child(even)
+        {
+            background-color: mix(#dae2ed, #FFFFCC);
+        }
+    }
+
+    .selected td
+    {
+        background-color: @active_color !important;
+    }
+}
+
+.box-gradient(@topColor, @bottomColor)
+{
+    background-image: -webkit-gradient(linear, left top, left bottom, from(@topColor), to(@bottomColor)); // Safari 4+, Chrome
+    background-image: -moz-linear-gradient(top, @topColor, @bottomColor);
+    background-image: -o-linear-gradient(top, @topColor, @bottomColor);
+    background-image: -ms-linear-gradient(top, @topColor, @bottomColor);
+    filter: formatstring("progid:DXImageTransform.Microsoft.gradient(startColorStr='{0}', EndColorStr='{1}')", @topColor, @bottomColor);
+}
+
+.shadow(@xOffset, @yOffset, @spread, @color)
+{
+    -moz-box-shadow: @xOffset @yOffset @spread @color;
+    -webkit-box-shadow: @xOffset @yOffset @spread @color;
+    box-shadow: @xOffset @yOffset @spread @color;
 }

@@ -53,6 +53,9 @@
     <Reference Include="AutoMapper">
       <HintPath>..\..\..\..\..\..\Projects\SSN.Portals.Marketing\SSN.Portals.Marketing\bin\AutoMapper.dll</HintPath>
     </Reference>
+    <Reference Include="dotless.Core">
+      <HintPath>..\packages\dotless.1.3.1.0\lib\dotless.Core.dll</HintPath>
+    </Reference>
     <Reference Include="EntityFramework, Version=4.4.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089, processorArchitecture=MSIL">
       <SpecificVersion>False</SpecificVersion>
       <HintPath>..\packages\EntityFramework.5.0.0\lib\net45\EntityFramework.dll</HintPath>
@@ -144,6 +147,9 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Site.min.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
     <Content Include="Content\themes\base\images\ui-bg_flat_0_aaaaaa_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_flat_75_ffffff_40x100.png" />
     <Content Include="Content\themes\base\images\ui-bg_glass_55_fbf9ee_1x400.png" />
@@ -182,6 +188,28 @@
     <Content Include="Scripts\jquery.validate.min.js" />
     <Content Include="Scripts\modernizr-1.7.js" />
     <Content Include="Scripts\modernizr-1.7.min.js" />
+    <None Include="Scripts\NinJa-vsdoc.js" />
+    <Content Include="Scripts\NinJa.js" />
+    <Content Include="Scripts\NinJa.min.js" />
+    <None Include="Scripts\NinJaAjax-vsdoc.js" />
+    <Content Include="Scripts\NinJaAjax.js" />
+    <Content Include="Scripts\NinJaAjax.min.js" />
+    <None Include="Scripts\NinJaCanvas-vsdoc.js" />
+    <Content Include="Scripts\NinJaCanvas.js" />
+    <None Include="Scripts\NinJaGridView-vsdoc.js" />
+    <Content Include="Scripts\NinJaGridView.js" />
+    <Content Include="Scripts\NinJaGridView.min.js" />
+    <None Include="Scripts\NinJaQuery-vsdoc.js" />
+    <Content Include="Scripts\NinJaQuery.js" />
+    <Content Include="Scripts\NinJaQuery.min.js" />
+    <Content Include="Scripts\NinJaSkinning.js" />
+    <None Include="Scripts\NinJaTesting-vsdoc.js" />
+    <Content Include="Scripts\NinJaTesting.js" />
+    <None Include="Scripts\NinJaUI-vsdoc.js" />
+    <Content Include="Scripts\NinJaUI.js" />
+    <None Include="Scripts\NinJaValidation-vsdoc.js" />
+    <Content Include="Scripts\NinJaValidation.js" />
+    <Content Include="Scripts\NinJaValidation.min.js" />
     <Content Include="Web.config">
       <SubType>Designer</SubType>
     </Content>
@@ -191,7 +219,6 @@
     <Content Include="Web.Release.config">
       <DependentUpon>Web.config</DependentUpon>
     </Content>
-    <Content Include="Content\Site.css" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.js" />
     <Content Include="Scripts\jquery.unobtrusive-ajax.min.js" />
     <Content Include="Scripts\jquery.validate.unobtrusive.js" />
@@ -285,6 +312,13 @@
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Content\Site.less" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="Scripts\NinJa.min.js.map" />
+    <Content Include="Scripts\NinJaGridView.min.js.map" />
   </ItemGroup>
   <PropertyGroup>
     <VisualStudioVersion Condition="'$(VisualStudioVersion)' == ''">10.0</VisualStudioVersion>
