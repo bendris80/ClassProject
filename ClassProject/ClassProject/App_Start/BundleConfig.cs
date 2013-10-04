@@ -9,23 +9,27 @@ namespace ClassProject
         public static void RegisterBundles(BundleCollection bundles)
         {
             bundles.Add(new ScriptBundle("~/bundles/jquery").Include(
-                        "~/Scripts/jquery-{version}.js"));
+                        "~/Scripts/jquery/jquery-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryui").Include(
-                        "~/Scripts/jquery-ui-{version}.js"));
+                        "~/Scripts/jquery/jquery-ui-{version}.js"));
 
             bundles.Add(new ScriptBundle("~/bundles/jqueryval").Include(
-                        "~/Scripts/jquery.unobtrusive*",
-                        "~/Scripts/jquery.validate*"));
+                        "~/Scripts/jquery/jquery.unobtrusive*",
+                        "~/Scripts/jquery/jquery.validate*"));
 
             bundles.Add(new ScriptBundle("~/bundles/NinJa").Include(
-                
-                ));
+                        "~/Scripts/NinJa/NinJa.js",
+                        "~/Scripts/NinJa/NinJaAjax.js",
+                        "~/Scripts/NinJa/NinJaGridView.js",
+                        "~/Scripts/NinJa/NinJaQuery.js",
+                        "~/Scripts/NinJa/NinJaUI.js",
+                        "~/Scripts/NinJa/NinJaValidation.js"));
 
             // Use the development version of Modernizr to develop with and learn from. Then, when you're
             // ready for production, use the build tool at http://modernizr.com to pick only the tests you need.
             bundles.Add(new ScriptBundle("~/bundles/modernizr").Include(
-                        "~/Scripts/modernizr-*"));
+                        "~/Scripts/modernizr/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include("~/Content/site.less"));
 
