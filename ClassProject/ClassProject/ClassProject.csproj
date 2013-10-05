@@ -138,21 +138,25 @@
     <Compile Include="App_Start\WebApiConfig.cs" />
     <Compile Include="Controllers\AccountController.cs" />
     <Compile Include="Controllers\BaseController.cs" />
+    <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
-    <Compile Include="Models\Course.cs" />
-    <Compile Include="Models\Department.cs" />
+    <Compile Include="Models\vmCourse.cs" />
     <Compile Include="Models\Enrollment.cs" />
-    <Compile Include="Models\Instructor.cs" />
+    <Compile Include="Models\vmInstructor.cs" />
     <Compile Include="Models\vmPerson.cs" />
     <Compile Include="Models\vmStudent.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\reset.css" />
+    <Content Include="Content\Site.css">
+      <DependentUpon>Site.less</DependentUpon>
+    </Content>
     <Content Include="Content\Site.min.css">
       <DependentUpon>Site.less</DependentUpon>
     </Content>
@@ -222,6 +226,7 @@
     <Content Include="README.jQuery.vsdoc.txt" />
     <Content Include="Scripts\jquery\jquery-1.5.1.js" />
     <Content Include="Scripts\jquery\jquery-1.5.1.min.js" />
+    <Content Include="App.config" />
     <None Include="Scripts\jquery\jquery-2.0.3.intellisense.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.js" />
     <Content Include="Scripts\jquery\jquery-2.0.3.min.js" />
@@ -242,6 +247,9 @@
     <None Include="Scripts\NinJa\NinJaAjax-vsdoc.js" />
     <Content Include="Scripts\NinJa\NinJaAjax.js" />
     <Content Include="Scripts\NinJa\NinJaAjax.min.js" />
+    <Content Include="Scripts\NinJa\NinJaAjax.min.js.map">
+      <DependentUpon>NinJaAjax.js</DependentUpon>
+    </Content>
     <None Include="Scripts\NinJa\NinJaCanvas-vsdoc.js" />
     <Content Include="Scripts\NinJa\NinJaCanvas.js" />
     <None Include="Scripts\NinJa\NinJaGridView-vsdoc.js" />
@@ -287,6 +295,8 @@
     <Content Include="Views\Shared\_LogOnPartial.cshtml" />
     <Content Include="Views\Shared\_Layout.cshtml" />
     <Content Include="Views\Web.config" />
+    <Content Include="Views\Course\Create.cshtml" />
+    <Content Include="Views\ViewPage1.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -314,9 +324,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Course\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Course\Create.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Course\Edit.cshtml" />

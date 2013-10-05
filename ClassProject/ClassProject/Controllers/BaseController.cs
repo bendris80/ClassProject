@@ -16,21 +16,40 @@ namespace ClassProject.Controllers
             #region Object Maps
             Mapper.CreateMap<vmStudent, Student>();
             Mapper.CreateMap<Student, vmStudent>();
+
             Mapper.CreateMap<vmPerson, Person>();
             Mapper.CreateMap<Person, vmPerson>();
+
+            Mapper.CreateMap<vmCourse, Course>();
+            Mapper.CreateMap<Course, vmCourse>();
+
+
             #endregion
         }
 
-        private FCTDataManager _man;
-        protected FCTDataManager FCTManager
+        private PersonManager _pman;
+        protected PersonManager PeopleManager
         {
             get
             {
-                if (_man == null)
+                if (_pman == null)
                 {
-                    _man = new FCTDataManager();
+                    _pman = new PersonManager();
                 }
-                return _man;
+                return _pman;
+            }
+        }
+
+        private StudentManager _sman;
+        protected StudentManager StudentManager
+        {
+            get
+            {
+                if (_sman == null)
+                {
+                    _sman = new StudentManager();
+                }
+                return _sman;
             }
         }
 
@@ -42,12 +61,13 @@ namespace ClassProject.Controllers
         {
             if (disposing)
             {
-                if (_man != null)
+                if (_pman != null)
                 {
-                    _man.Students.Dispose();
-                    _man.People.Dispose();
-                    //_man.Vendors.Dispose();
-                    //_man = null;
+                    _pman.Dispose();
+                    _sman.Dispose();
+                   
+                    _pman = null;
+                    _sman = null;
                 }
                 base.Dispose(disposing);
             }

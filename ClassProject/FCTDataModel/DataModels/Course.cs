@@ -23,9 +23,13 @@ namespace FCTDataModel
         public string Title { get; set; }
         [Column("credits")]
         public int Credits { get; set; }
+        [Column("instructor_id")]
+        public int InstructorID { get; set; }
         [Column("dept_id")]
         public int DepartmentID { get; set; }
         [Column("textbook_id")]
         public int TextBookID { get; set; }
+        [Column("description")]
+        public string Description { get; set; }
     }
 }

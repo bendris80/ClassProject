@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassProject.Models
 {
-    public class Instructor
+    public class vmInstructor
     {
         [DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
         [Required(ErrorMessage = "Hire date is required.")]

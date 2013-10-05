@@ -1,5 +1,19 @@
-﻿@model IEnumerable<ClassProject.Models.Course>
+﻿@model ClassProject.Models.vmCourseSearch
+@section Scripts{
+    @Scripts.Render("~/bundles/NinJa")
+    @if(false){
+        <script type="text/javascript" src="Scripts/NinJa/Ninja" ></script>
+        <script type="text/javascript" src="Scripts/NinJa/NinjaAjax.js"></script>
+        <script type="text/javascript" src="Scripts/NinJa/NinjaAjax-vsdoc.js.js" ></script>
+        <script type="text/javascript" src="Scripts/NinJa/NinjaGridView.js" ></script>
+        <script type="text/javascript" src="Scripts/NinJa/NinjaUI.js" ></script>
+        <script type="text/javascript" src="Scripts/NinJa/NinjaQuery.js" ></script>
+    }
+    <script type="text/javascript">
+        WebServiceRequest.GenerateServiceReference("Course");
 
+    </script>
+    }
 @{
     ViewBag.Title = "Courses";
 }
@@ -12,38 +26,18 @@
 
 @using (Html.BeginForm())
 {
-    <p>Select Department: @Html.DropDownList("SelectedDepartment","All") &nbsp; 
-    <input type="submit" value="Filter" /></p>
+    <fieldset>
+        <legend>Find Courses</legend>
+
+    </fieldset>
 }
 
-<table>
+<table class="gridview" id="courses" width="99%">
     <tr>
         <th></th>
-        <th>Number</th>
-        <th>Title</th>
-        <th>Credits</th>
-        <th>Department</th>
+        @*<th>Number</th>*@
+        <th data="Title">Title</th>
+        <th data="Credits">Credits</th>
+        @*<th>Department</th>*@
     </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.CourseID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.CourseID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.CourseID })
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.CourseID)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Title)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Credits)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department.Name)
-        </td>
-    </tr>
-}
 </table>

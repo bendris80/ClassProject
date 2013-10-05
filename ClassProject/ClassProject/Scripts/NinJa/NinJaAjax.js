@@ -369,7 +369,7 @@ AjaxRequest.PreventCacheCalls = true;
 
 //#region WebServiceRequest
 var WebServiceRequest = {
-    ServiceUrlFormat: "/Services/{Service}.asmx/{Function}"
+    ServiceUrlFormat: "{Service}/{Function}"
 };
 
 

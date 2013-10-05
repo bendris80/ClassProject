@@ -56,10 +56,13 @@
     <Compile Include="DataModels\LogEntry.cs" />
     <Compile Include="DataModels\Person.cs" />
     <Compile Include="DataModels\Publisher.cs" />
+    <Compile Include="DataModels\Semester.cs" />
     <Compile Include="DataModels\Textbook.cs" />
     <Compile Include="dbContext\FCTDataProvider.cs" />
     <Compile Include="Managers\BaseManager.cs" />
-    <Compile Include="Managers\FCTDataManager.cs" />
+    <Compile Include="Managers\CourseManager.cs" />
+    <Compile Include="Managers\DepartmentManager.cs" />
+    <Compile Include="Managers\InstructorManager.cs" />
     <Compile Include="Managers\PersonManager.cs" />
     <Compile Include="Managers\StudentManager.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

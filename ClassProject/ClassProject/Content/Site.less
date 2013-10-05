@@ -24,23 +24,19 @@
 @medium_color: rgb(56, 201, 0);
 @normal_color: rgb(0, 61, 255);
 
-.veryhigh
-{
+.veryhigh {
     color: @veryhigh_color;
 }
 
-.high
-{
+.high {
     color: @high_color;
 }
 
-.medium
-{
+.medium {
     color: @medium_color;
 }
 
-.normal
-{
+.normal {
     color: @normal_color;
 }
 //#endregion
@@ -136,28 +132,28 @@ header, #header {
     padding: 0;
 }
 
-header h1, #header h1 {
-    font-weight: bold;
-    padding: 5px 0;
-    margin: 0;
-    color: #fff;
-    border: none;
-    line-height: 2em;
-    font-size: 32px !important;
-    text-shadow: 1px 1px 2px #111;
-}
+    header h1, #header h1 {
+        font-weight: bold;
+        padding: 5px 0;
+        margin: 0;
+        color: #fff;
+        border: none;
+        line-height: 2em;
+        font-size: 32px !important;
+        -webkit-text-shadow: 1px 1px 2px #111;
+        text-shadow: 1px 1px 2px #111;
+    }
 
-#main 
-{
+#main {
     clear: both;
     padding: 10px 10px 10px 10px;
     background-color: #fff;
-    border-radius: 4px 0 0 0;
     -webkit-border-radius: 4px 0 0 0;
     -moz-border-radius: 4px 0 0 0;
+    border-radius: 4px 0 0 0;
 }
 
-footer, 
+footer,
 #footer {
     background-color: #fff;
     color: #999;
@@ -166,9 +162,9 @@ footer,
     line-height: normal;
     margin: 0 0 30px 0;
     font-size: .9em;
-    border-radius: 0 0 4px 4px;
     -webkit-border-radius: 0 0 4px 4px;
     -moz-border-radius: 0 0 4px 4px;
+    border-radius: 0 0 4px 4px;
 }
 
 /* TAB MENU   
@@ -181,45 +177,45 @@ ul#menu {
     text-align: right;
 }
 
-ul#menu li {
-    display: inline;
-    list-style: none;
-}
+    ul#menu li {
+        display: inline;
+        list-style: none;
+    }
 
-ul#menu li#greeting {
-    padding: 10px 10px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    color: #fff;
-}
+        ul#menu li#greeting {
+            padding: 10px 10px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 2.8em;
+            color: #fff;
+        }
 
-ul#menu li a {
-    padding: 10px 10px;
-    font-weight: bold;
-    text-decoration: none;
-    line-height: 2.8em;
-    background-color: #e8eef4;
-    color: #034af3;
-    border-radius: 4px 4px 0 0;
-    -webkit-border-radius: 4px 4px 0 0;
-    -moz-border-radius: 4px 4px 0 0;
-}
+        ul#menu li a {
+            padding: 10px 10px;
+            font-weight: bold;
+            text-decoration: none;
+            line-height: 2.8em;
+            background-color: #e8eef4;
+            color: #034af3;
+            -webkit-border-radius: 4px 4px 0 0;
+            -moz-border-radius: 4px 4px 0 0;
+            border-radius: 4px 4px 0 0;
+        }
 
-ul#menu li a:hover {
-    background-color: #fff;
-    text-decoration: none;
-}
+            ul#menu li a:hover {
+                background-color: #fff;
+                text-decoration: none;
+            }
 
-ul#menu li a:active {
-    background-color: #a6e2a6;
-    text-decoration: none;
-}
+            ul#menu li a:active {
+                background-color: #a6e2a6;
+                text-decoration: none;
+            }
 
-ul#menu li.selected a {
-    background-color: #fff;
-    color: #000;
-}
+        ul#menu li.selected a {
+            background-color: #fff;
+            color: #000;
+        }
 
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
@@ -239,7 +235,7 @@ textarea {
     min-height: 75px;
 }
 
-input[type="text"], 
+input[type="text"],
 input[type="password"] {
     border: 1px solid #ccc;
     padding: 2px;
@@ -263,28 +259,27 @@ input[type="submit"] {
 /* TABLE
 ----------------------------------------------------------*/
 
-table {
+/*table {
     border: solid 1px #e8eef4;
     border-collapse: collapse;
 }
 
-table td {
-    padding: 5px;
-    border: solid 1px #e8eef4;
-}
+    table td {
+        padding: 5px;
+        border: solid 1px #e8eef4;
+    }
 
-table th {
-    padding: 6px 5px;
-    text-align: left;
-    background-color: #e8eef4;
-    border: solid 1px #e8eef4;
-}
+    table th {
+        padding: 6px 5px;
+        text-align: left;
+        background-color: #e8eef4;
+        border: solid 1px #e8eef4;
+    }*/
 
 /* MISC  
 ----------------------------------------------------------*/
-.selectedrow 
-{ 
-    background-color: #EEEEEE; 
+.selectedrow {
+    background-color: #EEEEEE;
 }
 
 .clear {
@@ -295,7 +290,7 @@ table th {
     color: Red;
 }
 
-nav, 
+nav,
 #menucontainer {
     margin-top: 40px;
     clear: both;
@@ -316,20 +311,20 @@ div#title {
     color: White;
 }
 
-#logindisplay a:link {
-    color: white;
-    text-decoration: underline;
-}
+    #logindisplay a:link {
+        color: white;
+        text-decoration: underline;
+    }
 
-#logindisplay a:visited {
-    color: white;
-    text-decoration: underline;
-}
+    #logindisplay a:visited {
+        color: white;
+        text-decoration: underline;
+    }
 
-#logindisplay a:hover {
-    color: white;
-    text-decoration: none;
-}
+    #logindisplay a:hover {
+        color: white;
+        text-decoration: none;
+    }
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
@@ -357,12 +352,12 @@ div#title {
 
 /* Styles for editor and display helpers
 ----------------------------------------------------------*/
-.display-label, 
+.display-label,
 .editor-label {
     margin: 1em 0 0 0;
 }
 
-.display-field, 
+.display-field,
 .editor-field {
     margin: 0.5em 0 0 0;
 }
@@ -371,68 +366,57 @@ div#title {
     width: 30em;
 }
 
-.text-box.multi-line {
-    height: 6.5em;
-}
+    .text-box.multi-line {
+        height: 6.5em;
+    }
 
 .tri-state {
     width: 6em;
 }
 
 
-.gridviewcontainer
-{
+.gridviewcontainer {
     border: 1px solid #000000;
 }
 
-.gridview
-{
+.gridview {
     font-size: 10pt;
 
-    th
-    {
+    th {
         cursor: pointer;
         text-align: left;
 
-        &:hover
-        {
+        &:hover {
             .box-gradient(lighten(@column_color, 20%), @column_color);
         }
 
-        &.sorted
-        {
+        &.sorted {
             .box-gradient(@column_color, lighten(@column_color, 10%));
         }
 
-        span
-        {
+        span {
             font-size: 9pt;
         }
     }
 
-    tbody tr td:nth-child(even)
-    {
+    tbody tr td:nth-child(even) {
         background-color: mix(#dae2ed, #ffffff);
     }
 
-    tbody tr:nth-child(even)
-    {
+    tbody tr:nth-child(even) {
         background-color: #FFFFCC;
 
-        td:nth-child(even)
-        {
+        td:nth-child(even) {
             background-color: mix(#dae2ed, #FFFFCC);
         }
     }
 
-    .selected td
-    {
+    .selected td {
         background-color: @active_color !important;
     }
 }
 
-.box-gradient(@topColor, @bottomColor)
-{
+.box-gradient(@topColor, @bottomColor) {
     background-image: -webkit-gradient(linear, left top, left bottom, from(@topColor), to(@bottomColor)); // Safari 4+, Chrome
     background-image: -moz-linear-gradient(top, @topColor, @bottomColor);
     background-image: -o-linear-gradient(top, @topColor, @bottomColor);
@@ -440,8 +424,7 @@ div#title {
     filter: formatstring("progid:DXImageTransform.Microsoft.gradient(startColorStr='{0}', EndColorStr='{1}')", @topColor, @bottomColor);
 }
 
-.shadow(@xOffset, @yOffset, @spread, @color)
-{
+.shadow(@xOffset, @yOffset, @spread, @color) {
     -moz-box-shadow: @xOffset @yOffset @spread @color;
     -webkit-box-shadow: @xOffset @yOffset @spread @color;
     box-shadow: @xOffset @yOffset @spread @color;
