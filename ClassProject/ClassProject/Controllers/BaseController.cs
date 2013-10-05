@@ -23,6 +23,8 @@ namespace ClassProject.Controllers
             Mapper.CreateMap<vmCourse, Course>();
             Mapper.CreateMap<Course, vmCourse>();
 
+            Mapper.CreateMap<vmInstructor, Student>();
+            Mapper.CreateMap<Student, vmInstructor>();
 
             #endregion
         }
@@ -53,6 +55,19 @@ namespace ClassProject.Controllers
             }
         }
 
+        private InstructorManager _iman;
+        protected InstructorManager InstManager
+        {
+            get
+            {
+                if (_iman == null)
+                {
+                    _iman = new InstructorManager();
+                }
+                return _iman;
+            }
+        }
+
         private DepartmentManager _dman;
         protected DepartmentManager DeptManager
         {
@@ -78,9 +93,11 @@ namespace ClassProject.Controllers
                 {
                     _pman.Dispose();
                     _sman.Dispose();
+                    _iman.Dispose();
                     _dman.Dispose();
                     _pman = null;
                     _sman = null;
+                    _iman = null;
                     _dman = null;
                 }
                 base.Dispose(disposing);

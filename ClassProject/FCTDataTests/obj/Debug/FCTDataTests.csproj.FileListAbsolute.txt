@@ -18,3 +18,13 @@ C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\Entity
 C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.csprojResolveAssemblyReference.cache
 C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.dll
 C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.pdb
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataTests.dll.config
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataTests.dll
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataTests.pdb
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\EntityFramework.dll
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataModel.dll
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\FCTDataModel.pdb
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\EntityFramework.xml
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.csprojResolveAssemblyReference.cache
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.dll
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.pdb
