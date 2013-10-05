@@ -42,9 +42,9 @@ namespace ClassProject.Controllers
         public ActionResult Create()
         {
             var disp = new vmCourse();
-            using (var dep = new DepartmentManager())
+            using (DeptManager)
             {
-                disp.Departments = dep.GetAllDepartments().ToList();
+                disp.Departments = DeptManager.GetAllDepartments().ToList();
                 return View(disp);
             }
         }

@@ -41,7 +41,7 @@ namespace ClassProject.Controllers
         }
 
         private StudentManager _sman;
-        protected StudentManager StudentManager
+        protected StudentManager StudManager
         {
             get
             {
@@ -50,6 +50,19 @@ namespace ClassProject.Controllers
                     _sman = new StudentManager();
                 }
                 return _sman;
+            }
+        }
+
+        private DepartmentManager _dman;
+        protected DepartmentManager DeptManager
+        {
+            get
+            {
+                if (_dman == null)
+                {
+                    _dman = new DepartmentManager();
+                }
+                return _dman;
             }
         }
 
@@ -65,9 +78,10 @@ namespace ClassProject.Controllers
                 {
                     _pman.Dispose();
                     _sman.Dispose();
-                   
+                    _dman.Dispose();
                     _pman = null;
                     _sman = null;
+                    _dman = null;
                 }
                 base.Dispose(disposing);
             }
