@@ -74,15 +74,13 @@ namespace ClassProject.Controllers
         {
             if (disposing)
             {
-                if (_pman != null)
-                {
-                    _pman.Dispose();
-                    _sman.Dispose();
-                    _dman.Dispose();
-                    _pman = null;
-                    _sman = null;
-                    _dman = null;
-                }
+                    //_pman.Dispose();
+                    //_sman.Dispose();
+                    //_dman.Dispose();
+                    //_pman = null;
+                    //_sman = null;
+                    //_dman = null;
+                
                 base.Dispose(disposing);
             }
         }

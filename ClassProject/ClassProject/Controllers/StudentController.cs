@@ -5,8 +5,8 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using ClassProject.Models;
-
 using PagedList;
 
 namespace ClassProject.Controllers
@@ -18,7 +18,19 @@ namespace ClassProject.Controllers
         [HttpGet]
         public ViewResult Index()
         {
-            return View();
+            using (StudManager)
+            {
+                using (PeopleManager)
+                {
+                    var items = StudManager.GetAllStudents();
+                    var disp = Mapper.Map<IEnumerable<vmStudent>>(items);
+                    foreach (var d in disp)
+                    {
+                        d.PersonName = PeopleManager.GetPersonbyID(d.PersonID).FirstMidName + " " + PeopleManager.GetPersonbyID(d.PersonID).LastName;
+                    }
+                    return View(disp);
+                }
+            }
         }
 
 
@@ -35,7 +47,8 @@ namespace ClassProject.Controllers
         [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            var disp = new vmStudent();
+            return View(disp);
         }
 
         //

@@ -15,6 +15,6 @@ namespace ClassProject.Models
         [Display(Name = "Enrollment Date"),
         Required(ErrorMessage = "Enrollment date is required."),
         DisplayFormat(DataFormatString = "{0:d}", ApplyFormatInEditMode = true)]
-        public DateTime? EnrollmentDate { get; set; }
+        public DateTime EnrollmentDate { get; set; }
     }
 }
