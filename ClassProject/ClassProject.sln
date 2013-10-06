@@ -2,6 +2,9 @@
 Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 2012
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ClassProject", "ClassProject\ClassProject.csproj", "{8D77BF76-B221-4542-BEF1-7330A37ABB00}"
+	ProjectSection(ProjectDependencies) = postProject
+		{945C1313-653D-40AF-A468-91B826673542} = {945C1313-653D-40AF-A468-91B826673542}
+	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "FCTDataModel", "FCTDataModel\FCTDataModel.csproj", "{945C1313-653D-40AF-A468-91B826673542}"
 EndProject
