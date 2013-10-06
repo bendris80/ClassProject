@@ -1,4 +1,4 @@
-﻿@model ClassProject.Models.Instructor
+﻿@model ClassProject.Models.vmInstructor
 
 @{
     ViewBag.Title = "Create";
@@ -12,23 +12,7 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Instructor</legend>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FirstMidName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FirstMidName)
-            @Html.ValidationMessageFor(model => model.FirstMidName)
-        </div>
+        <legend>vmInstructor</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.HireDate)
@@ -36,6 +20,38 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.HireDate)
             @Html.ValidationMessageFor(model => model.HireDate)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonID)
+            @Html.ValidationMessageFor(model => model.PersonID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.PersonName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.PersonName)
+            @Html.ValidationMessageFor(model => model.PersonName)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentID)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DepartmentID)
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
+        <div class="editor-label">
+            @Html.LabelFor(model => model.DepartmentName)
+        </div>
+        <div class="editor-field">
+            @Html.EditorFor(model => model.DepartmentName)
+            @Html.ValidationMessageFor(model => model.DepartmentName)
         </div>
 
         <p>
