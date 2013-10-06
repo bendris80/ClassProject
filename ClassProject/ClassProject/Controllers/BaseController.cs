@@ -23,8 +23,8 @@ namespace ClassProject.Controllers
             Mapper.CreateMap<vmCourse, Course>();
             Mapper.CreateMap<Course, vmCourse>();
 
-            Mapper.CreateMap<vmInstructor, Student>();
-            Mapper.CreateMap<Student, vmInstructor>();
+            Mapper.CreateMap<vmInstructor, Instructor>();
+            Mapper.CreateMap<Instructor, vmInstructor>();
 
             #endregion
         }
@@ -81,10 +81,10 @@ namespace ClassProject.Controllers
             }
         }
 
-           /// <summary>
-           /// TODO Call Dispose Methods for each Manager.
-           /// </summary>
-           /// <param name="disposing"></param>
+        /// <summary>
+        /// TODO Call Dispose Methods for each Manager.
+        /// </summary>
+        /// <param name="disposing"></param>
         protected override void Dispose(bool disposing)
         {
             if (disposing)
@@ -92,12 +92,21 @@ namespace ClassProject.Controllers
                 if (_pman != null)
                 {
                     _pman.Dispose();
-                    _sman.Dispose();
-                    _iman.Dispose();
-                    _dman.Dispose();
                     _pman = null;
+                }
+                if (_sman != null)
+                {
+                    _sman.Dispose();
                     _sman = null;
+                }
+                if (_sman != null)
+                {
+                    _iman.Dispose();
                     _iman = null;
+                }
+                if (_dman != null)
+                {
+                    _dman.Dispose();
                     _dman = null;
                 }
                 base.Dispose(disposing);
