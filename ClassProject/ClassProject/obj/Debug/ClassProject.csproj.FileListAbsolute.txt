@@ -291,3 +291,6 @@ C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\o
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\AutoMapper.dll
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\AutoMapper.Net4.dll
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\AutoMapper.xml
+C:\Users\Roger\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.dll
+C:\Users\Roger\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.Net4.dll
+C:\Users\Roger\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.xml
