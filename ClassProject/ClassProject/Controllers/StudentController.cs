@@ -5,105 +5,62 @@ using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 using ClassProject.Models;
-using ClassProject.DAL;
 using PagedList;
 
 namespace ClassProject.Controllers
 {
-    public class StudentController : Controller
+    public class StudentController : BaseController
     {
-        private IStudentRepository studentRepository;
-
-
-        public StudentController()
-        {
-            this.studentRepository = new StudentRepository(new SchoolContext());
-        }
-
-        public StudentController(IStudentRepository studentRepository)
-        {
-            this.studentRepository = studentRepository;
-        }
-
-
         //
         // GET: /Student/
-
-        public ViewResult Index(string sortOrder, string currentFilter, string searchString, int? page)
+        [HttpGet]
+        public ViewResult Index()
         {
-            ViewBag.CurrentSort = sortOrder;
-            ViewBag.NameSortParm = String.IsNullOrEmpty(sortOrder) ? "Name desc" : "";
-            ViewBag.DateSortParm = sortOrder == "Date" ? "Date desc" : "Date";
-
-            if (Request.HttpMethod == "GET")
+            using (StudManager)
             {
-                searchString = currentFilter;
+                using (PeopleManager)
+                {
+                    var items = StudManager.GetAllStudents();
+                    var disp = Mapper.Map<IEnumerable<vmStudent>>(items);
+                    foreach (var d in disp)
+                    {
+                        d.PersonName = PeopleManager.GetPersonbyID(d.PersonID).FirstMidName + " " + PeopleManager.GetPersonbyID(d.PersonID).LastName;
+                    }
+                    return View(disp);
+                }
             }
-            else
-            {
-                page = 1;
-            }
-            ViewBag.CurrentFilter = searchString;
-            
-            var students = from s in studentRepository.GetStudents()
-                           select s;
-            if (!String.IsNullOrEmpty(searchString))
-            {
-                students = students.Where(s => s.LastName.ToUpper().Contains(searchString.ToUpper())
-                                       || s.FirstMidName.ToUpper().Contains(searchString.ToUpper()));
-            }
-            switch (sortOrder)
-            {
-                case "Name desc":
-                    students = students.OrderByDescending(s => s.LastName);
-                    break;
-                case "Date":
-                    students = students.OrderBy(s => s.EnrollmentDate);
-                    break;
-                case "Date desc":
-                    students = students.OrderByDescending(s => s.EnrollmentDate);
-                    break;
-                default:
-                    students = students.OrderBy(s => s.LastName);
-                    break;
-            }
-
-            int pageSize = 3;
-            int pageNumber = (page ?? 1);
-            return View(students.ToPagedList(pageNumber, pageSize));
         }
 
 
         //
         // GET: /Student/Details/5
-
+        [HttpGet]
         public ViewResult Details(int id)
         {
-            Student student = studentRepository.GetStudentByID(id);
-            return View(student);
+            return View();
         }
 
         //
         // GET: /Student/Create
-
+        [HttpGet]
         public ActionResult Create()
         {
-            return View();
+            var disp = new vmStudent();
+            return View(disp);
         }
 
         //
         // POST: /Student/Create
 
         [HttpPost]
-        public ActionResult Create(Student student)
+        public ActionResult Create(vmStudent student)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    studentRepository.InsertStudent(student);
-                    studentRepository.Save();
                     return RedirectToAction("Index");
                 }
             }
@@ -117,25 +74,24 @@ namespace ClassProject.Controllers
 
         //
         // GET: /Student/Edit/5
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            Student student = studentRepository.GetStudentByID(id);
-            return View(student);
+            
+            return View();
         }
 
         //
         // POST: /Student/Edit/5
 
         [HttpPost]
-        public ActionResult Edit(Student student)
+        public ActionResult Edit(vmStudent student)
         {
             try
             {
                 if (ModelState.IsValid)
                 {
-                    studentRepository.UpdateStudent(student);
-                    studentRepository.Save();
+                    
                     return RedirectToAction("Index");
                 }
             }
@@ -149,45 +105,29 @@ namespace ClassProject.Controllers
 
         //
         // GET: /Student/Delete/5
-
-        public ActionResult Delete(int id, bool? saveChangesError)
+        [HttpGet]
+        public ActionResult Delete(int id)
         {
-            if (saveChangesError.GetValueOrDefault())
-            {
-                ViewBag.ErrorMessage = "Unable to save changes. Try again, and if the problem persists see your system administrator.";
-            }
-            Student student = studentRepository.GetStudentByID(id);
-            return View(student);
+            
+            return View();
         }
 
 
         //
         // POST: /Student/Delete/5
 
-        [HttpPost, ActionName("Delete")]
+        [HttpPost]
         public ActionResult DeleteConfirmed(int id)
         {
             try
             {
-                Student student = studentRepository.GetStudentByID(id);
-                studentRepository.DeleteStudent(id);
-                studentRepository.Save();
             }
             catch (DataException)
             {
                 //Log the error (add a variable name after DataException)
-                return RedirectToAction("Delete",
-                    new System.Web.Routing.RouteValueDictionary { 
-                { "id", id }, 
-                { "saveChangesError", true } });
+
             }
             return RedirectToAction("Index");
-        }
-
-        protected override void Dispose(bool disposing)
-        {
-            studentRepository.Dispose();
-            base.Dispose(disposing);
         }
     }
 }

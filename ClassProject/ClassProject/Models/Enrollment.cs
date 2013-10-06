@@ -15,7 +15,7 @@ namespace ClassProject.Models
         [DisplayFormat(DataFormatString = "{0:#.#}", ApplyFormatInEditMode = true, NullDisplayText = "No grade")]
         public decimal? Grade { get; set; }
 
-        public virtual Course Course { get; set; }
-        public virtual Student Student { get; set; }
+        public vmCourse Course { get; set; }
+        public vmStudent Student { get; set; }
     }
 }

@@ -1,4 +1,4 @@
-﻿@model ClassProject.Models.Student
+﻿@model ClassProject.Models.vmStudent
 
 @{
     ViewBag.Title = "Create";
@@ -12,22 +12,22 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Student</legend>
+        <legend>vmStudent</legend>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
+            @Html.LabelFor(model => model.PersonID)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
+            @Html.EditorFor(model => model.PersonID)
+            @Html.ValidationMessageFor(model => model.PersonID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FirstMidName)
+            @Html.LabelFor(model => model.PersonName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FirstMidName)
-            @Html.ValidationMessageFor(model => model.FirstMidName)
+            @Html.EditorFor(model => model.PersonName)
+            @Html.ValidationMessageFor(model => model.PersonName)
         </div>
 
         <div class="editor-label">

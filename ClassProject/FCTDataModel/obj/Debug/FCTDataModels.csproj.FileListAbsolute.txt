@@ -11,3 +11,10 @@ C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataModel\bin\Debug\Entity
 C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataModel\obj\Debug\FCTDataModels.csprojResolveAssemblyReference.cache
 C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataModel\obj\Debug\FCTDataModel.dll
 C:\Users\Roger\Documents\ClassProject\ClassProject\FCTDataModel\obj\Debug\FCTDataModel.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\bin\Debug\FCTDataModel.dll.config
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\bin\Debug\FCTDataModel.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\bin\Debug\FCTDataModel.pdb
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\bin\Debug\EntityFramework.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\bin\Debug\EntityFramework.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\obj\Debug\FCTDataModel.dll
+C:\Users\rpayne\Documents\ClassProject\ClassProject\FCTDataModel\obj\Debug\FCTDataModel.pdb

@@ -1,107 +1,96 @@
-﻿using System;
+﻿using ClassProject.Models;
+using FCTDataModel;
+using System;
 using System.Collections.Generic;
-using System.Data;
-using System.Data.Entity;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
-using ClassProject.Models;
-using ClassProject.DAL;
 
 namespace ClassProject.Controllers
 {
-    public class CourseController : Controller
+    public class CourseController : BaseController
     {
-        private UnitOfWork unitOfWork = new UnitOfWork();
-
         //
         // GET: /Course/
-
-        public ActionResult Index(int? SelectedDepartment)
+        [HttpGet]
+        public ActionResult Index()
         {
-            var departments = unitOfWork.DepartmentRepository.Get(
-                orderBy: q => q.OrderBy(d => d.Name));
-            ViewBag.SelectedDepartment = new SelectList(departments, "DepartmentID", "Name", SelectedDepartment);
-
-            int departmentID = SelectedDepartment.GetValueOrDefault();
-            return View(unitOfWork.CourseRepository.Get(
-                filter: d => !SelectedDepartment.HasValue || d.DepartmentID == departmentID,
-                orderBy: q => q.OrderBy(d => d.CourseID),
-                includeProperties: "Department"));
+            var disp = new vmCourseSearch();
+            return View(disp);
         }
+        [HttpPost]
+        public ActionResult Index(vmCourseSearch vm)
+        {
+            using (var cm = new CourseManager())
+            {
+                var courses = cm.GetAllCourses();
 
+                return Json(courses);
+            }
+        }
         //
         // GET: /Course/Details/5
 
         public ActionResult Details(int id)
         {
-            var query = "SELECT * FROM Course WHERE CourseID = @p0";
-            return View(unitOfWork.CourseRepository.GetWithRawSql(query, id).Single());
+            return View();
         }
 
         //
         // GET: /Course/Create
-
+        [HttpGet]
         public ActionResult Create()
         {
-            PopulateDepartmentsDropDownList();
-            return View();
+            var disp = new vmCourse();
+            using (DeptManager)
+            {
+                disp.Departments = DeptManager.GetAllDepartments().ToList();
+                return View(disp);
+            }
         }
 
+        //
+        // POST: /Course/Create
+
         [HttpPost]
-        public ActionResult Create(Course course)
+        public ActionResult Create(FormCollection collection)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    unitOfWork.CourseRepository.Insert(course);
-                    unitOfWork.Save();
-                    return RedirectToAction("Index");
-                }
+                // TODO: Add insert logic here
+
+                return RedirectToAction("Index");
             }
-            catch (DataException)
+            catch
             {
-                //Log the error (add a variable name after DataException)
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
+                return View();
             }
-            PopulateDepartmentsDropDownList(course.DepartmentID);
-            return View(course);
         }
+
+        //
+        // GET: /Course/Edit/5
 
         public ActionResult Edit(int id)
         {
-            Course course = unitOfWork.CourseRepository.GetByID(id);
-            PopulateDepartmentsDropDownList(course.DepartmentID);
-            return View(course);
+            return View();
         }
 
+        //
+        // POST: /Course/Edit/5
+
         [HttpPost]
-        public ActionResult Edit(Course course)
+        public ActionResult Edit(int id, FormCollection collection)
         {
             try
             {
-                if (ModelState.IsValid)
-                {
-                    unitOfWork.CourseRepository.Update(course);
-                    unitOfWork.Save();
-                    return RedirectToAction("Index");
-                }
-            }
-            catch (DataException)
-            {
-                //Log the error (add a variable name after DataException)
-                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists, see your system administrator.");
-            }
-            PopulateDepartmentsDropDownList(course.DepartmentID);
-            return View(course);
-        }
+                // TODO: Add update logic here
 
-        private void PopulateDepartmentsDropDownList(object selectedDepartment = null)
-        {
-            var departmentsQuery = unitOfWork.DepartmentRepository.Get(
-                orderBy: q => q.OrderBy(d => d.Name));
-            ViewBag.DepartmentID = new SelectList(departmentsQuery, "DepartmentID", "Name", selectedDepartment);
+                return RedirectToAction("Index");
+            }
+            catch
+            {
+                return View();
+            }
         }
 
         //
@@ -109,35 +98,25 @@ namespace ClassProject.Controllers
 
         public ActionResult Delete(int id)
         {
-            Course course = unitOfWork.CourseRepository.GetByID(id);
-            return View(course);
+            return View();
         }
 
         //
         // POST: /Course/Delete/5
 
-        [HttpPost, ActionName("Delete")]
-        public ActionResult DeleteConfirmed(int id)
+        [HttpPost]
+        public ActionResult Delete(int id, FormCollection collection)
         {
-            Course course = unitOfWork.CourseRepository.GetByID(id);
-            unitOfWork.CourseRepository.Delete(id);
-            unitOfWork.Save();
-            return RedirectToAction("Index");
-        }
-
-        public ActionResult UpdateCourseCredits(int? multiplier)
-        {
-            if (multiplier != null)
+            try
             {
-                ViewBag.RowsAffected = unitOfWork.CourseRepository.UpdateCourseCredits(multiplier.Value);
+                // TODO: Add delete logic here
+
+                return RedirectToAction("Index");
             }
-            return View();
-        }
-        
-        protected override void Dispose(bool disposing)
-        {
-            unitOfWork.Dispose();
-            base.Dispose(disposing);
+            catch
+            {
+                return View();
+            }
         }
     }
 }
