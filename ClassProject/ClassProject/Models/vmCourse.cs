@@ -16,8 +16,11 @@ namespace ClassProject.Models
         public int Credits { get; set; }
 
         public int InstructorID { get; set; }
+
+        public int InstructorLast { get; set; }
+        public int InstructorFirst { get; set; }
         [Display(Name = "Instructor")]
-        public string InstructorName { get; set; }
+        public string InstructorName { get { return InstructorLast + ", " + InstructorFirst; } }
         public List<vmInstructor> Instructors = new List<vmInstructor>();
 
         public int DepartmentID { get; set; }

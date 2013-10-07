@@ -201,24 +201,6 @@ input[type="submit"] {
   font-size: 1.2em;
   padding: 5px;
 }
-/* TABLE
-----------------------------------------------------------*/
-/*table {
-    border: solid 1px #e8eef4;
-    border-collapse: collapse;
-}
-
-    table td {
-        padding: 5px;
-        border: solid 1px #e8eef4;
-    }
-
-    table th {
-        padding: 6px 5px;
-        text-align: left;
-        background-color: #e8eef4;
-        border: solid 1px #e8eef4;
-    }*/
 /* MISC  
 ----------------------------------------------------------*/
 .selectedrow {
@@ -303,6 +285,10 @@ div#title {
 }
 .gridview {
   font-size: 10pt;
+  margin: 0px;
+  width: auto;
+  border: 0px;
+  outline: 0px;
 }
 .gridview th {
   cursor: pointer;
@@ -336,4 +322,51 @@ div#title {
 }
 .gridview .selected td {
   background-color: #e8b11e !important;
+}
+.vscrollbar {
+  background-image: url(/Content/Images/backgrounds/scrollbar/trackbg.png);
+  background-repeat: repeat-y;
+}
+.vscrollbar .decrease.thumb {
+  background-image: url('/Content/Images/backgrounds/scrollbar/decrease.png');
+}
+.vscrollbar .decrease.thumb:hover {
+  background-image: url('/Content/Images/backgrounds/scrollbar/decrease2.png');
+}
+.vscrollbar .increase.thumb {
+  background-image: url('/Content/Images/backgrounds/scrollbar/increase.png');
+}
+.vscrollbar .increase.thumb:hover {
+  background-image: url('/Content/Images/backgrounds/scrollbar/increase2.png');
+}
+.vscrollbar .track.thumb {
+  background-image: url('/Content/Images/backgrounds/scrollbar/track.png');
+}
+.vscrollbar .track.thumb:hover {
+  background-image: url('/Content/Images/backgrounds/scrollbar/track2.png');
+}
+.vscrollbar .track.thumb.focus {
+  background-image: url('/Content/Images/backgrounds/scrollbar/track2.png');
+}
+table {
+  outline: 1px solid #000000;
+  border-collapse: collapse;
+  width: 100%;
+  margin: 8px;
+}
+table td {
+  border-top: 1px solid #e0e0e0;
+  padding: 4px;
+}
+tbody > tr:nth-child(even) {
+  background-color: #f0f0f0;
+}
+table th {
+  background-image: -webkit-gradient(linear, left top, left bottom, from(#35aee7), to(#1996d0));
+  background-image: -moz-linear-gradient(top, #35aee7, #1996d0);
+  background-image: -ms-linear-gradient(top, #35aee7, #1996d0);
+  filter: progid:DXImageTransform.Microsoft.gradient(startColorStr='#35aee7', EndColorStr='#1996d0');
+  color: #ffffff !important;
+  padding: 4px;
+  font-weight: bold;
 }

@@ -158,6 +158,20 @@
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
+    <Content Include="Content\Images\backgrounds\scrollbar\decrease.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\decrease2.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\hdecrease.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\hdecrease2.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\hincrease.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\hincrease2.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\htrack.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\htrack2.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\htrackbg.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\increase.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\increase2.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\track.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\track2.png" />
+    <Content Include="Content\Images\backgrounds\scrollbar\trackbg.png" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>

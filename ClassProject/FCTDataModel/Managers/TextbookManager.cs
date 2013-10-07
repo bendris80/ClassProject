@@ -7,11 +7,11 @@ using System.Threading.Tasks;
 
 namespace FCTDataModel
 {
-    public class CourseManager : BaseManager
+    public class TextbookManager : BaseManager
     {
         FCTDataProvider db { get; set; }
 
-        public CourseManager():base()
+        public TextbookManager():base()
         {
             db = new FCTDataProvider();
         }
@@ -45,25 +45,20 @@ namespace FCTDataModel
             return true;
         }
 
-        #region Course
-        public IEnumerable<CourseDetail> GetAllCourseDetails()
+        #region Textbook
+        public IEnumerable<Textbook> GetAllTextbooks()
         {
-            return db.CourseDetails;
+            return db.Textbooks;
         }
 
-        public IEnumerable<Course> GetAllCourses()
+        public Textbook GetTextbookbyID(int id)
         {
-            return db.Courses;
+            return db.Textbooks.Where(v => v.ID == id).FirstOrDefault();
         }
 
-        public Course GetCoursebyID(int id)
+        public bool AddTextbook(Textbook v)
         {
-            return db.Courses.Where(v => v.ID == id).FirstOrDefault();
-        }
-
-        public bool AddCourse(Course v)
-        {
-            db.Courses.Add(v);
+            db.Textbooks.Add(v);
             if (!Save())
             {
                 return false;
@@ -72,13 +67,13 @@ namespace FCTDataModel
 
         }
 
-        public bool RemoveCourse(Course v)
+        public bool RemoveTextbook(Textbook v)
         {
-            if (!db.Courses.Local.Contains(v))
+            if (!db.Textbooks.Local.Contains(v))
             {
-                db.Courses.Attach(v);
+                db.Textbooks.Attach(v);
             }
-            db.Courses.Remove(v);
+            db.Textbooks.Remove(v);
             if (!Save())
             {
                 return false;
@@ -86,13 +81,13 @@ namespace FCTDataModel
             return true;
         }
 
-        public bool UpdateCourse(Course v)
+        public bool UpdateTextbook(Textbook v)
         {
-            if (!db.Courses.Local.Contains(v))
+            if (!db.Textbooks.Local.Contains(v))
             {
-                db.Courses.Attach(v);
+                db.Textbooks.Attach(v);
             }
-            db.Entry<Course>(v).State = EntityState.Modified;
+            db.Entry<Textbook>(v).State = EntityState.Modified;
             if (!Save())
             {
                 return false;
@@ -101,13 +96,13 @@ namespace FCTDataModel
 
         }
 
-        public IEnumerable<Course> FindCourses(Func<Course, bool> filter)
+        public IEnumerable<Textbook> FindTextbooks(Func<Textbook, bool> filter)
         {
             if (filter == null)
             {
                 return null;
             }
-            return db.Courses.Where(filter);
+            return db.Textbooks.Where(filter);
         }
         #endregion
     }

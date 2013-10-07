@@ -50,6 +50,7 @@
   <ItemGroup>
     <Compile Include="DataModels\Author.cs" />
     <Compile Include="DataModels\Course.cs" />
+    <Compile Include="DataModels\CourseDetail.cs" />
     <Compile Include="DataModels\Department.cs" />
     <Compile Include="DataModels\Enrollment.cs" />
     <Compile Include="DataModels\Instructor.cs" />
@@ -60,6 +61,7 @@
     <Compile Include="DataModels\Textbook.cs" />
     <Compile Include="dbContext\FCTDataProvider.cs" />
     <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Managers\TextbookManager.cs" />
     <Compile Include="Managers\CourseManager.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />
     <Compile Include="Managers\InstructorManager.cs" />

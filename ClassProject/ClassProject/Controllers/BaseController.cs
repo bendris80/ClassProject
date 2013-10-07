@@ -23,6 +23,9 @@ namespace ClassProject.Controllers
             Mapper.CreateMap<vmCourse, Course>();
             Mapper.CreateMap<Course, vmCourse>();
 
+            Mapper.CreateMap<vmCourse, CourseDetail>();
+            Mapper.CreateMap<CourseDetail, vmCourse>();
+
             Mapper.CreateMap<vmInstructor, Instructor>();
             Mapper.CreateMap<Instructor, vmInstructor>();
 
@@ -81,6 +84,31 @@ namespace ClassProject.Controllers
             }
         }
 
+        private CourseManager _cman;
+        protected CourseManager CoursesManager
+        {
+            get
+            {
+                if (_cman == null)
+                {
+                    _cman = new CourseManager();
+                }
+                return _cman;
+            }
+        }
+
+        private TextbookManager _tman;
+        protected TextbookManager TBManager
+        {
+            get
+            {
+                if (_tman == null)
+                {
+                    _tman = new TextbookManager();
+                }
+                return _tman;
+            }
+        }
         /// <summary>
         /// TODO Call Dispose Methods for each Manager.
         /// </summary>
@@ -108,6 +136,16 @@ namespace ClassProject.Controllers
                 {
                     _dman.Dispose();
                     _dman = null;
+                }
+                if (_cman != null)
+                {
+                    _cman.Dispose();
+                    _cman = null;
+                }
+                if (_tman != null)
+                {
+                    _tman.Dispose();
+                    _tman = null;
                 }
                 base.Dispose(disposing);
             }
