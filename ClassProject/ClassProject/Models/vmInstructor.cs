@@ -15,12 +15,10 @@ namespace ClassProject.Models
         public int ID { get; set; }
 
         public int PersonID { get; set; }
-        [Display(Name = "Name"), Required]
-        public string PersonName { get; set; }
+        public vmPerson Person { get; set; }
 
         public int DepartmentID { get; set; }
-        [Display(Name = "Department")]
-        public string DepartmentName { get; set; }
+        public vmDepartment Department { get; set; }
         public List<Department> Departments = new List<Department>();
     }
 }

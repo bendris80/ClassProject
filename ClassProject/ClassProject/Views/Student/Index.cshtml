@@ -15,7 +15,7 @@
             PersonID
         </th>
         <th>
-            PersonName
+            Name
         </th>
         <th>
             EnrollmentDate
@@ -26,10 +26,10 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.PersonID)
+            @Html.DisplayFor(modelItem => item.Person.PersonID)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.PersonName)
+            @Html.DisplayFor(modelItem => item.Person.FullName)
         </td>
         <td>
             @Html.DisplayFor(modelItem => item.EnrollmentDate)

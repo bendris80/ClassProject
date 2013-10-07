@@ -1,10 +1,10 @@
-﻿@model ClassProject.Models.Student
+﻿@model ClassProject.Models.vmStudent
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Student";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -12,26 +12,24 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Student</legend>
+        <legend>Details</legend>
 
-        @Html.HiddenFor(model => model.PersonID)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
-        </div>
+        @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.FirstMidName)
+            @Html.LabelFor(model => model.Person.FirstMidName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.FirstMidName)
-            @Html.ValidationMessageFor(model => model.FirstMidName)
+            @Html.EditorFor(model => model.Person.FirstMidName)
+            @Html.ValidationMessageFor(model => model.Person.FirstMidName)
         </div>
-
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Person.LastName)
+        </div>
+         <div class="editor-field">
+            @Html.EditorFor(model => model.Person.LastName)
+            @Html.ValidationMessageFor(model => model.Person.LastName)
+        </div>
         <div class="editor-label">
             @Html.LabelFor(model => model.EnrollmentDate)
         </div>
