@@ -48,8 +48,22 @@ namespace ClassProject.Controllers
             var disp = new vmCourse();
             using (DeptManager)
             {
-                disp.Departments = DeptManager.GetAllDepartments().ToList();
-                return View(disp);
+                using(InstManager)
+                {
+                    using (PeopleManager)
+                    {
+                        using (TBManager)
+                        {
+                            disp.Departments = DeptManager.GetAllDepartments().ToList();
+                            var inst = InstManager.GetAllInstructors();
+                            var people = PeopleManager.FindPeople(p => inst.Select(i => i.PersonID).Contains(p.ID));
+                            
+                            
+                            disp.Textbooks = TBManager.GetAllTextbooks().ToList();
+                            return View(disp);
+                        }
+                    }
+                }
             }
         }
 
@@ -57,7 +71,7 @@ namespace ClassProject.Controllers
         // POST: /Course/Create
 
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(vmCourse course)
         {
             try
             {

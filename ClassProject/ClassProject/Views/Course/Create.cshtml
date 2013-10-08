@@ -31,26 +31,18 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.InstructorID)
+            @Html.LabelFor(model => model.InstructorName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.InstructorID)
+            @Html.DropDownListFor(model => model.InstructorID, new SelectList(Model.Instructors, "ID", "Name"))
             @Html.ValidationMessageFor(model => model.InstructorID)
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.InstructorName)
+            @Html.LabelFor(model => model.DepartmentName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.InstructorName)
-            @Html.ValidationMessageFor(model => model.InstructorName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DepartmentID)
-        </div>
-        <div class="editor-field">
-            @Html.DropDownListFor(model => model.DepartmentID, new SelectList(Model.Departments, "ID", "NAME"), "Any")
+            @Html.DropDownListFor(model => model.DepartmentID, new SelectList(Model.Departments, "ID", "Name"))
             @Html.ValidationMessageFor(model => model.DepartmentID)
         </div>
 
