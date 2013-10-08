@@ -1,9 +1,9 @@
 *.suo
 *.user
 TestResults/
-ClassProject/FCTDataModel/bin/
-ClassProject/FCTDataModel/obj/
-ClassProject/ClassProject/bin/
-ClassProject/ClassProject/obj/
-ClassProject/FCTDataTests/bin/
-ClassProject/FCTDataTests/obj/
+ClassProject/FCTDataModel/bin
+ClassProject/FCTDataModel/obj
+ClassProject/ClassProject/bin
+ClassProject/ClassProject/obj
+ClassProject/FCTDataTests/bin
+ClassProject/FCTDataTests/obj
