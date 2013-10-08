@@ -24,19 +24,23 @@
 @medium_color: rgb(56, 201, 0);
 @normal_color: rgb(0, 61, 255);
 
-.veryhigh {
+.veryhigh
+{
     color: @veryhigh_color;
 }
 
-.high {
+.high
+{
     color: @high_color;
 }
 
-.medium {
+.medium
+{
     color: @medium_color;
 }
 
-.normal {
+.normal
+{
     color: @normal_color;
 }
 //#endregion
@@ -47,40 +51,48 @@ The base color for this template is #5c87b2. If you'd like
 to use a different color start by replacing all instances of
 #5c87b2 with your new color.
 ----------------------------------------------------------*/
-html {
-    height: 100%;
-    width: 100%;
+*
+{
+    -webkit-box-sizing: border-box;
+    -moz-box-sizing: border-box;
+    box-sizing: border-box;
 }
 
-body {
+html
+{
+    height: 100%;
+    /*width: 100%;*/
+}
+
+body
+{
     background-color: #5c87b2;
     font-size: 12pt;
     font-family: "Trebuchet MS", Verdana, Helvetica, Sans-Serif;
     margin: 0;
     padding: 0;
-    height: 100%;
+    min-height: 100%;
     width: 100%;
     color: #696969;
 }
 
-html, body {
+html, body
+{
     margin: 0px;
     padding: 0px;
-    overflow: auto;
 }
 
-header {
+header
+{
     color: #5c87b2;
     padding: 0;
     height: 80px;
     background-color: #e8eef4;
     border-bottom: 1px solid #000000;
     white-space: nowrap;
-    margin-bottom: -80px;
-    margin-left: 20px;
-    margin-right: 20px;
 
-    h1 {
+    h1
+    {
         font-weight: bold;
         padding: 5px 0;
         margin: 0;
@@ -91,50 +103,53 @@ header {
     }
 }
 
-#page {
-    width: 100%;
-    height: 100%;
+#page
+{
+    /*width: 100%;*/
+    min-height: 100%;
 }
 
 
-#main {
+#main
+{
     clear: both;
     background-color: #fff;
-    min-height: 25%;
     padding: 40px 32px 50px 32px;
-    margin-left: 20px;
-    margin-right: 20px;
 }
 
-footer {
+footer
+{
     height: 20px;
-    position: relative;
-    top: -40px;
     border-top: 1px solid #000000;
     color: black;
     background-color: #5c87b2;
     text-align: center;
 }
 
-a:link {
+a:link
+{
     color: #034af3;
     text-decoration: underline;
 }
 
-a:visited {
+a:visited
+{
     color: #505abc;
 }
 
-a:hover {
+a:hover
+{
     color: #1d60ff;
     text-decoration: none;
 }
 
-a:active {
+a:active
+{
     color: #12eb87;
 }
 
-p, ul {
+p, ul
+{
     margin-bottom: 20px;
     line-height: 1.6em;
 }
@@ -142,36 +157,43 @@ p, ul {
 header,
 footer,
 nav,
-section {
+section
+{
     display: block;
 }
 
 /* HEADINGS   
 ----------------------------------------------------------*/
-h1, h2, h3, h4, h5, h6 {
+h1, h2, h3, h4, h5, h6
+{
     font-size: 1.5em;
     color: #000;
 }
 
-h1 {
+h1
+{
     font-size: 2em;
     padding-bottom: 0;
     margin-bottom: 0;
 }
 
-h2 {
+h2
+{
     padding: 0 0 10px 0;
 }
 
-h3 {
+h3
+{
     font-size: 1.2em;
 }
 
-h4 {
+h4
+{
     font-size: 1.1em;
 }
 
-h5, h6 {
+h5, h6
+{
     font-size: 1em;
 }
 
@@ -186,19 +208,22 @@ page width. Or, you can specify an exact pixel width. */
 /* TAB MENU   
 ----------------------------------------------------------*/
 //#region
-ul#menu {
+ul#menu
+{
     border-bottom: 1px #5C87B2 solid;
     padding: 0 0 2px;
     position: relative;
     margin: 0;
     text-align: right;
 
-    li {
+    li
+    {
         display: inline;
         list-style: none;
     }
 
-        li#greeting {
+        li#greeting
+        {
             padding: 10px 10px;
             font-weight: bold;
             text-decoration: none;
@@ -206,7 +231,8 @@ ul#menu {
             color: #fff;
         }
 
-        li a {
+        li a
+        {
             padding: 10px 10px;
             font-weight: bold;
             text-decoration: none;
@@ -217,18 +243,21 @@ ul#menu {
             -moz-border-radius: 4px 4px 0 0;
             border-radius: 4px 4px 0 0;
 
-            li a:hover {
+            li a:hover
+            {
                 background-color: #fff;
                 text-decoration: none;
             }
 
-            li a:active {
+            li a:active
+            {
                 background-color: #a6e2a6;
                 text-decoration: none;
             }
         }
 
-        li.selected a {
+        li.selected a
+        {
             background-color: #fff;
             color: #000;
         }
@@ -238,23 +267,27 @@ ul#menu {
 /* FORM LAYOUT ELEMENTS   
 ----------------------------------------------------------*/
 
-fieldset {
+fieldset
+{
     border: 1px solid #ddd;
     padding: 0 1.4em 1.4em 1.4em;
     margin: 0 0 1.5em 0;
 }
 
-legend {
+legend
+{
     font-size: 1.2em;
     font-weight: bold;
 }
 
-textarea {
+textarea
+{
     min-height: 75px;
 }
 
 input[type="text"],
-input[type="password"] {
+input[type="password"]
+{
     border: 1px solid #ccc;
     padding: 2px;
     font-size: 1.2em;
@@ -262,65 +295,79 @@ input[type="password"] {
     width: 200px;
 }
 
-select {
+select
+{
     border: 1px solid #ccc;
     padding: 2px;
     font-size: 1.2em;
     color: #444;
 }
 
-input[type="submit"] {
+input[type="submit"]
+{
     font-size: 1.2em;
     padding: 5px;
 }
 
 /* MISC  
 ----------------------------------------------------------*/
-.selectedrow {
+.selectedrow
+{
     background-color: #EEEEEE;
 }
 
-.clear {
+.clear
+{
     clear: both;
 }
 
-.error {
+.error
+{
     color: Red;
 }
 
 nav,
-#menucontainer {
+#menucontainer
+{
     margin-top: 40px;
     clear: both;
     float: left;
 }
 
-div#title {
+div#title
+{
     display: block;
     float: left;
     text-align: left;
     padding-left: 20px;
+    padding-right: 20px;
+    margin: 2px;
 }
 
 //#region Login
-#logindisplay {
+#logindisplay
+{
     font-size: 1.1em;
-    display: block;
+    display: inline-block;
     text-align: right;
     margin: 10px;
     color: #034af3;
+    float: right;
 
-    #logindisplay a:link {
+    #logindisplay a:link
+    {
         color: #034af3;
         text-decoration: underline;
     }
 
-    #logindisplay a:visited {
+    #logindisplay a:visited
+    {
         color: white;
         text-decoration: underline;
     }
 
-    #logindisplay a:hover {
+    #logindisplay a:hover
+    {
         color: white;
         text-decoration: none;
     }
@@ -329,151 +376,183 @@ div#title {
 
 /* Styles for validation helpers
 -----------------------------------------------------------*/
-.field-validation-error {
+.field-validation-error
+{
     color: #ff0000;
 }
 
-.field-validation-valid {
+.field-validation-valid
+{
     display: none;
 }
 
-.input-validation-error {
+.input-validation-error
+{
     border: 1px solid #ff0000;
     background-color: #ffeeee;
 }
 
-.validation-summary-errors {
+.validation-summary-errors
+{
     font-weight: bold;
     color: #ff0000;
 }
 
-.validation-summary-valid {
+.validation-summary-valid
+{
     display: none;
 }
 
 /* Styles for editor and display helpers
 ----------------------------------------------------------*/
 .display-label,
-.editor-label {
+.editor-label
+{
     margin: 1em 0 0 0;
 }
 
 .display-field,
-.editor-field {
+.editor-field
+{
     margin: 0.5em 0 0 0;
 }
 
-.text-box {
+.text-box
+{
     width: 30em;
 
-    .multi-line {
+    .multi-line
+    {
         height: 6.5em;
     }
 }
 
-.tri-state {
+.tri-state
+{
     width: 6em;
 }
 //#endregion
 
 //#region Ajax Gridview (do not edit)
-.gridviewcontainer {
+.gridviewcontainer
+{
     border: 1px solid #000000;
 }
 
-.gridview {
+.gridview
+{
     font-size: 10pt;
     margin: 0px;
     width: auto;
     border: 0px;
     outline: 0px;
 
-    th {
+    th
+    {
         cursor: pointer;
         text-align: left;
 
-        &:hover {
+        &:hover
+        {
             .box-gradient(lighten(@column_color, 20%), @column_color);
         }
 
-        &.sorted {
+        &.sorted
+        {
             .box-gradient(@column_color, lighten(@column_color, 10%));
         }
 
-        span {
+        span
+        {
             font-size: 9pt;
         }
     }
 
-    tbody tr td:nth-child(even) {
+    tbody tr td:nth-child(even)
+    {
         background-color: mix(#dae2ed, #ffffff);
     }
 
-    tbody tr:nth-child(even) {
+    tbody tr:nth-child(even)
+    {
         background-color: #FFFFCC;
 
-        td:nth-child(even) {
+        td:nth-child(even)
+        {
             background-color: mix(#dae2ed, #FFFFCC);
         }
     }
 
-    .selected td {
+    .selected td
+    {
         background-color: @active_color !important;
     }
 }
 
-.vscrollbar {
+.vscrollbar
+{
     background-image: url(/Content/Images/backgrounds/scrollbar/trackbg.png);
     background-repeat: repeat-y;
 
-    .decrease.thumb {
+    .decrease.thumb
+    {
         background-image: url('/Content/Images/backgrounds/scrollbar/decrease.png');
     }
 
-        .decrease.thumb:hover {
+        .decrease.thumb:hover
+        {
             background-image: url('/Content/Images/backgrounds/scrollbar/decrease2.png');
         }
 
-    .increase.thumb {
+    .increase.thumb
+    {
         background-image: url('/Content/Images/backgrounds/scrollbar/increase.png');
     }
 
-        .increase.thumb:hover {
+        .increase.thumb:hover
+        {
             background-image: url('/Content/Images/backgrounds/scrollbar/increase2.png');
         }
 
-    .track.thumb {
+    .track.thumb
+    {
         background-image: url('/Content/Images/backgrounds/scrollbar/track.png');
     }
 
-        .track.thumb:hover {
+        .track.thumb:hover
+        {
             background-image: url('/Content/Images/backgrounds/scrollbar/track2.png');
         }
 
-        .track.thumb.focus {
+        .track.thumb.focus
+        {
             background-image: url('/Content/Images/backgrounds/scrollbar/track2.png');
         }
 }
 //#endregion
 
 //#region default Table (edit with caution)
-table {
+table
+{
     outline: 1px solid #000000;
     border-collapse: collapse;
     width: 100%;
     margin: 8px;
 }
 
-    table td {
+    table td
+    {
         border-top: 1px solid #e0e0e0;
         padding: 4px;
     }
 
-tbody > tr:nth-child(even) {
+tbody > tr:nth-child(even)
+{
     background-color: #f0f0f0;
 }
 
-table th {
+table th
+{
     background-image: -webkit-gradient(linear, left top, left bottom, from(#35aee7), to(#1996d0));
     background-image: -moz-linear-gradient(top, #35aee7, #1996d0);
     background-image: -ms-linear-gradient(top, #35aee7, #1996d0);
@@ -487,7 +566,8 @@ table th {
 
 
 //#region  .LESS functions (can add new function, do not edit current ones)
-.box-gradient(@topColor, @bottomColor) {
+.box-gradient(@topColor, @bottomColor)
+{
     background-image: -webkit-gradient(linear, left top, left bottom, from(@topColor), to(@bottomColor)); // Safari 4+, Chrome
     background-image: -moz-linear-gradient(top, @topColor, @bottomColor);
     background-image: -o-linear-gradient(top, @topColor, @bottomColor);
@@ -495,7 +575,8 @@ table th {
     filter: formatstring("progid:DXImageTransform.Microsoft.gradient(startColorStr='{0}', EndColorStr='{1}')", @topColor, @bottomColor);
 }
 
-.shadow(@xOffset, @yOffset, @spread, @color) {
+.shadow(@xOffset, @yOffset, @spread, @color)
+{
     -moz-box-shadow: @xOffset @yOffset @spread @color;
     -webkit-box-shadow: @xOffset @yOffset @spread @color;
     box-shadow: @xOffset @yOffset @spread @color;

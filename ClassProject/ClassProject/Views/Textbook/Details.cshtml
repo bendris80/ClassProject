@@ -1,0 +1,42 @@
+﻿@model ClassProject.Models.vmTextbook
+
+@{
+    ViewBag.Title = "Details";
+}
+
+<h2>Details</h2>
+
+<fieldset>
+    <legend>vmTextbook</legend>
+
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Name)
+    </div>
+
+    <div class="display-label">Publisher</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Publisher.Name)
+    </div>
+    <div class="display-label">Publisher City</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Publisher.City)
+    </div>
+    <div class="display-label">Publisher State</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Publisher.State)
+    </div>
+    <div class="display-label">Author</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Author.Person.FullName)
+    </div>
+
+    <div class="display-label">Publish Date</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.PublishDate)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

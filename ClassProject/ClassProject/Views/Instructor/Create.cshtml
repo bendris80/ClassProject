@@ -23,35 +23,25 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.PersonID)
+            @Html.LabelFor(model => model.Person.FirstMidName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PersonID)
-            @Html.ValidationMessageFor(model => model.PersonID)
+            @Html.EditorFor(model => model.Person.FirstMidName)
+            @Html.ValidationMessageFor(model => model.Person.FirstMidName)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.PersonName)
+            @Html.LabelFor(model => model.Person.LastName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.PersonName)
-            @Html.ValidationMessageFor(model => model.PersonName)
+            @Html.EditorFor(model => model.Person.LastName)
+            @Html.ValidationMessageFor(model => model.Person.LastName)
         </div>
-
         <div class="editor-label">
-            @Html.LabelFor(model => model.DepartmentID)
+            @Html.LabelFor(model => model.Department.Name)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.DepartmentID)
+            @Html.DropDownListFor(model => model.DepartmentID, new SelectList(Model.Departments,"ID","Name"))
             @Html.ValidationMessageFor(model => model.DepartmentID)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.DepartmentName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DepartmentName)
-            @Html.ValidationMessageFor(model => model.DepartmentName)
         </div>
 
         <p>

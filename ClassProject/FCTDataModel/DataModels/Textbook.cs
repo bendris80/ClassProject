@@ -17,11 +17,9 @@ namespace FCTDataModel
         public string Name { get; set; }
         [Column("publisher_id")]
         public int PublisherID { get; set; }
-        [Column("department_id")]
-        public int DepartmentID { get; set; }
         [Column("author_id")]
         public int AuthorID { get; set; }
-        [Column("copyright_year")]
-        public string PublishDate { get; set; }
+        [Column("publish_date")]
+        public DateTime PublishDate { get; set; }
     }
 }

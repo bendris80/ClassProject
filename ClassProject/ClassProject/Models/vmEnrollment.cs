@@ -4,7 +4,7 @@ using System.ComponentModel.DataAnnotations;
 
 namespace ClassProject.Models
 {
-    public class Enrollment
+    public class vmEnrollment
     {
         public int EnrollmentID { get; set; }
 
