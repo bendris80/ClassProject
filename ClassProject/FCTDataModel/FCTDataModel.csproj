@@ -61,6 +61,9 @@
     <Compile Include="DataModels\Textbook.cs" />
     <Compile Include="dbContext\FCTDataProvider.cs" />
     <Compile Include="Managers\BaseManager.cs" />
+    <Compile Include="Managers\EnrollmentManager.cs" />
+    <Compile Include="Managers\PublisherManager.cs" />
+    <Compile Include="Managers\AuthorManager.cs" />
     <Compile Include="Managers\TextbookManager.cs" />
     <Compile Include="Managers\CourseManager.cs" />
     <Compile Include="Managers\DepartmentManager.cs" />

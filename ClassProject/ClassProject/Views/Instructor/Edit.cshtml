@@ -1,10 +1,10 @@
-﻿@model ClassProject.Models.Instructor
+﻿@model ClassProject.Models.vmInstructor
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "ViewPage1";
 }
 
-<h2>Edit</h2>
+<h2>ViewPage1</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -12,25 +12,9 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Instructor</legend>
+        <legend>vmInstructor</legend>
 
-        @Html.HiddenFor(model => model.PersonID)
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.LastName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.LastName)
-            @Html.ValidationMessageFor(model => model.LastName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.FirstMidName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.FirstMidName)
-            @Html.ValidationMessageFor(model => model.FirstMidName)
-        </div>
+        @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.HireDate)
@@ -41,38 +25,27 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.OfficeAssignment.Location)
+            @Html.LabelFor(model => model.Person.FirstMidName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.OfficeAssignment.Location)
-            @Html.ValidationMessageFor(model => model.OfficeAssignment.Location)
+            @Html.EditorFor(model => model.Person.FirstMidName)
+            @Html.ValidationMessageFor(model => model.Person.FirstMidName)
         </div>
         <div class="editor-label">
-            @Html.LabelFor(model => model.OfficeAssignment.Location)
+            @Html.LabelFor(model => model.Person.LastName)
         </div>
         <div class="editor-field">
-            <table style="width: 100%">
-                <tr>
-                    @{
-                        int cnt = 0;
-                        List<ClassProject.ViewModels.AssignedCourseData> courses = ViewBag.Courses;
-
-                        foreach (var course in courses) {
-                            if (cnt++ % 3 == 0) {
-                                @:  </tr> <tr> 
-                            }
-                            @: <td> 
-                                <input type="checkbox" 
-                                       name="selectedCourses" 
-                                       value="@course.CourseID" 
-                                       @(Html.Raw(course.Assigned ? "checked=\"checked\"" : "")) /> 
-                                @course.CourseID @:&nbsp; @course.Title
-                            @:</td>
-                        }
-                        @: </tr>
-                    }
-            </table>
+            @Html.EditorFor(model => model.Person.LastName)
+            @Html.ValidationMessageFor(model => model.Person.LastName)
         </div>
+        <div class="editor-label">
+            @Html.LabelFor(model => model.Department.Name)
+        </div>
+        <div class="editor-field">
+            @Html.DropDownListFor(model => model.DepartmentID, new SelectList(Model.Departments,"ID","Name"))
+            @Html.ValidationMessageFor(model => model.DepartmentID)
+        </div>
+
         <p>
             <input type="submit" value="Save" />
         </p>

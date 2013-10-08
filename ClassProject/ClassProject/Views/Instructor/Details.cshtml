@@ -1,4 +1,4 @@
-﻿@model ClassProject.Models.Instructor
+﻿@model ClassProject.Models.vmInstructor
 
 @{
     ViewBag.Title = "Details";
@@ -7,25 +7,24 @@
 <h2>Details</h2>
 
 <fieldset>
-    <legend>Instructor</legend>
+    <legend>vmInstructor</legend>
 
-    <div class="display-label">Last Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.LastName)
-    </div>
-
-    <div class="display-label">First Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.FirstMidName)
-    </div>
-
-    <div class="display-label">Hire Date</div>
+    <div class="display-label">HireDate</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.HireDate)
     </div>
 
+    <div class="display-label">Name</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Person.FullName)
+    </div>
+
+    <div class="display-label">Department</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Department.Name)
+    </div>
 </fieldset>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.PersonID }) |
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

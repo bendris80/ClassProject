@@ -14,6 +14,10 @@ namespace ClassProject.Controllers
         static BaseController()
         {
             #region Object Maps
+
+            Mapper.CreateMap<vmAuthor, Author>();
+            Mapper.CreateMap<Author, vmAuthor>();
+
             Mapper.CreateMap<vmStudent, Student>();
             Mapper.CreateMap<Student, vmStudent>();
 
@@ -32,9 +36,16 @@ namespace ClassProject.Controllers
             Mapper.CreateMap<vmInstructor, Instructor>();
             Mapper.CreateMap<Instructor, vmInstructor>();
 
+            Mapper.CreateMap<vmPublisher, Publisher>();
+            Mapper.CreateMap<Publisher, vmPublisher>();
+
+            Mapper.CreateMap<vmTextbook, Textbook>();
+            Mapper.CreateMap<Textbook, vmTextbook>();
+
             #endregion
         }
 
+        #region Managers
         private PersonManager _pman;
         protected PersonManager PeopleManager
         {
@@ -112,6 +123,47 @@ namespace ClassProject.Controllers
                 return _tman;
             }
         }
+
+        private AuthorManager _aman;
+        public AuthorManager AuthorsManager
+        {
+            get
+            {
+                if (_aman == null)
+                {
+                    _aman = new AuthorManager();
+                }
+                return _aman;
+            }
+        }
+
+        private PublisherManager _pubman;
+        public PublisherManager PublishersManager
+        {
+            get
+            {
+                if (_pubman == null)
+                {
+                    _pubman = new PublisherManager();
+                }
+                return _pubman;
+            }
+        }
+
+        private EnrollmentManager _eman;
+        public EnrollmentManager EnrollmentsManager
+        {
+            get
+            {
+                if (_eman == null)
+                {
+                    _eman = new EnrollmentManager();
+                }
+                return _eman;
+            }
+        }
+        #endregion
+
         /// <summary>
         /// TODO Call Dispose Methods for each Manager.
         /// </summary>
@@ -150,6 +202,18 @@ namespace ClassProject.Controllers
                     _tman.Dispose();
                     _tman = null;
                 }
+                if (_aman != null)
+                {
+                    _aman.Dispose();
+                    _aman = null;
+                }
+
+                if (_pubman != null)
+                {
+                    _pubman.Dispose();
+                    _pubman = null;
+                }
+
                 base.Dispose(disposing);
             }
         }

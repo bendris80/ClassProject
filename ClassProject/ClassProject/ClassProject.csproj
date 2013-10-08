@@ -174,16 +174,20 @@
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
+    <Compile Include="Controllers\TextbookController.cs" />
     <Compile Include="Global.asax.cs">
       <DependentUpon>Global.asax</DependentUpon>
     </Compile>
     <Compile Include="Models\AccountModels.cs" />
+    <Compile Include="Models\vmAuthor.cs" />
     <Compile Include="Models\vmCourse.cs" />
-    <Compile Include="Models\Enrollment.cs" />
+    <Compile Include="Models\vmEnrollment.cs" />
     <Compile Include="Models\vmDepartment.cs" />
     <Compile Include="Models\vmInstructor.cs" />
     <Compile Include="Models\vmPerson.cs" />
+    <Compile Include="Models\vmPublisher.cs" />
     <Compile Include="Models\vmStudent.cs" />
+    <Compile Include="Models\vmTextbook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
   <ItemGroup>
@@ -355,6 +359,14 @@
     <Content Include="Views\Department\Index.cshtml" />
     <Content Include="Views\Department\Create.cshtml" />
     <Content Include="Views\Department\Edit.cshtml" />
+    <Content Include="Views\Instructor\Details.cshtml" />
+    <Content Include="Views\Instructor\Edit.cshtml" />
+    <Content Include="Views\Instructor\Delete.cshtml" />
+    <Content Include="Views\Textbook\Index.cshtml" />
+    <Content Include="Views\Textbook\Create.cshtml" />
+    <Content Include="Views\Textbook\Edit.cshtml" />
+    <Content Include="Views\Textbook\Details.cshtml" />
+    <Content Include="Views\Textbook\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -376,15 +388,6 @@
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Course\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Instructor\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Instructor\Edit.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Instructor\Delete.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Course\UpdateCourseCredits.cshtml" />

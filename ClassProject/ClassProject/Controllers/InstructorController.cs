@@ -14,14 +14,14 @@ namespace ClassProject.Controllers
     {
         //
         // GET: /Instructor/
-
+        [HttpGet]
         public ActionResult Index()
         {
-            using (DeptManager)
+            using (PeopleManager)
             {
                 using (InstManager)
                 {
-                    using (PeopleManager)
+                    using (DeptManager)
                     {
                         var items = InstManager.GetAllInstructors();
                         var disp = Mapper.Map<IEnumerable<vmInstructor>>(items);
@@ -40,7 +40,7 @@ namespace ClassProject.Controllers
 
         //
         // GET: /Instructor/Details/5
-
+        [HttpGet]
         public ActionResult Details(int id)
         {
             using (DeptManager)
@@ -63,7 +63,7 @@ namespace ClassProject.Controllers
 
         //
         // GET: /Instructor/Create
-
+        [HttpGet]
         public ActionResult Create()
         {
             using (DeptManager)
@@ -75,10 +75,8 @@ namespace ClassProject.Controllers
                 return View(disp);
             }
         }
-
         //
         // POST: /Instructor/Create
-
         [HttpPost]
         public ActionResult Create(vmInstructor inst)
         {
@@ -126,28 +124,75 @@ namespace ClassProject.Controllers
 
         //
         // GET: /Instructor/Edit/5
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
+            using (DeptManager)
+            {
+                using (InstManager)
+                {
+                    using (PeopleManager)
+                    {
+                        var item = InstManager.GetInstructorbyID(id);
+                        var disp = Mapper.Map<vmInstructor>(item);
+                        disp.Person = new vmPerson();
+                        disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
+                        disp.Departments = new List<Department>();
+                        disp.Departments = DeptManager.GetAllDepartments().OrderBy(d => d.Name).ToList();
+                        return View(disp);
+                    }
+                }
+            }
         }
-
         //
         // POST: /Instructor/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(vmInstructor inst)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    using (InstManager)
+                    {
+                        using (PeopleManager)
+                        {
+                            var person = PeopleManager.GetPersonbyID(inst.PersonID);
+                            person.FirstMidName = inst.Person.FirstMidName;
+                            person.LastName = inst.Person.LastName;
+                            var success = PeopleManager.UpdatePerson(person);
+                            if (success)
+                            {
+                                var item = InstManager.GetInstructorbyID(inst.ID);
+                                item.PersonID = person.ID;
+                                item.HireDate = inst.HireDate;
+                                item.DepartmentID = inst.DepartmentID;
+                                success = InstManager.UpdateInstructor(item);
+                                if (success)
+                                {
+                                    return RedirectToAction("Details", new { id = item.ID });
+                                }
+                                else
+                                {
+                                    ModelState.AddModelError("", "Unable to save Instructor. Please try again.");
+                                    return View(inst);
+                                }
+                            }
+                            else
+                            {
+                                ModelState.AddModelError("", "Unable to save person. Please try again.");
+                                return View(inst);
+                            }
+                        }
+                    }
+                }
             }
-            catch
+            catch (DataException)
             {
-                return View();
+                //Log the error (add a variable name after DataException)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+            return View(inst);
         }
 
         //
@@ -155,24 +200,46 @@ namespace ClassProject.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            using (DeptManager)
+            {
+                using (InstManager)
+                {
+                    using (PeopleManager)
+                    {
+                        var item = InstManager.GetInstructorbyID(id);
+                        var disp = Mapper.Map<vmInstructor>(item);
+                        disp.Person = new vmPerson();
+                        disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
+                        disp.Department = new vmDepartment();
+                        disp.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(item.DepartmentID));
+                        return View(disp);
+                    }
+                }
+            }
         }
-
         //
         // POST: /Instructor/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(vmInstructor inst)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                using (InstManager)
+                {
+                    var item = InstManager.GetInstructorbyID(inst.ID);
+                    var success = InstManager.RemoveInstructor(item);
+                    if (success)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    throw new DataException();
+                }             
             }
-            catch
+            catch(DataException)
             {
-                return View();
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                return View(inst);
             }
         }
     }

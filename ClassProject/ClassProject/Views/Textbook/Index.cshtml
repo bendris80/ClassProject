@@ -1,4 +1,4 @@
-﻿@model IEnumerable<ClassProject.Models.vmInstructor>
+﻿@model IEnumerable<ClassProject.Models.vmTextbook>
 
 @{
     ViewBag.Title = "Index";
@@ -12,13 +12,16 @@
 <table>
     <tr>
         <th>
-            HireDate
+            Name
         </th>
         <th>
-            PersonName
+            Author
         </th>
         <th>
-            DepartmentName
+            Publisher
+        </th>       
+        <th>
+            Publish Date
         </th>
         <th></th>
     </tr>
@@ -26,13 +29,16 @@
 @foreach (var item in Model) {
     <tr>
         <td>
-            @Html.DisplayFor(modelItem => item.HireDate)
+            @Html.DisplayFor(modelItem => item.Name)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Person.FullName)
+            @Html.DisplayFor(modelItem => item.Author.Person.FullName)
         </td>
         <td>
-            @Html.DisplayFor(modelItem => item.Department.Name)
+            @Html.DisplayFor(modelItem => item.Publisher.Name)
+        </td>        
+        <td>
+            @Html.DisplayFor(modelItem => item.PublishDate)
         </td>
         <td>
             @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
