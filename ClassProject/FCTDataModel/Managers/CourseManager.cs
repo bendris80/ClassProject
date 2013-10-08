@@ -46,6 +46,11 @@ namespace FCTDataModel
         }
 
         #region Course
+        public IEnumerable<CourseDetail> GetAllCourseDetails()
+        {
+            return db.CourseDetails;
+        }
+
         public IEnumerable<Course> GetAllCourses()
         {
             return db.Courses;

@@ -32,7 +32,7 @@ namespace ClassProject
                         "~/Scripts/modernizr/modernizr-*"));
 
             bundles.Add(new StyleBundle("~/Content/css").Include(
-                "~/Content/.reset.css",
+                "~/Content/reset.css",
                 "~/Content/site.css"));
 
             bundles.Add(new StyleBundle("~/Content/themes/base/css").Include(

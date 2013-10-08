@@ -5,6 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Web;
 using System.Web.Mvc;
+using AutoMapper;
 
 namespace ClassProject.Controllers
 {
@@ -21,12 +22,15 @@ namespace ClassProject.Controllers
         [HttpPost]
         public ActionResult Index(vmCourseSearch vm)
         {
-            using (var cm = new CourseManager())
+            IEnumerable<CourseDetail> courses = null;
+            using (CoursesManager)
             {
-                var courses = cm.GetAllCourses();
-
-                return Json(courses);
+                courses = CoursesManager.GetAllCourseDetails();
+                var dispcourses = Mapper.Map<IEnumerable<vmCourse>>(courses);
+                JsonResult result = Json(courses);
+                return result;
             }
+
         }
         //
         // GET: /Course/Details/5

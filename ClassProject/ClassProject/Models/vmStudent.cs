@@ -9,8 +9,8 @@ namespace ClassProject.Models
         public int ID { get; set; }
 
         public int PersonID { get; set; }
-        [Display(Name = "Name"), Required]
-        public string PersonName { get; set; }
+
+        public vmPerson Person { get; set; }
 
         [Display(Name = "Enrollment Date"),
         Required(ErrorMessage = "Enrollment date is required."),
