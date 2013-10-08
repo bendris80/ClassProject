@@ -1,4 +1,9 @@
+*.suo
+*.user
+TestResults/
 ClassProject/FCTDataModel/bin/
 ClassProject/FCTDataModel/obj/
+ClassProject/ClassProject/bin/
 ClassProject/ClassProject/obj/
-ClassProject/FCTDataTests/obj/Debug/FCTDataTests.csprojResolveAssemblyReference.cache
+ClassProject/FCTDataTests/bin/
+ClassProject/FCTDataTests/obj/
