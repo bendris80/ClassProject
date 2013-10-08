@@ -10,37 +10,38 @@
     <script type="text/javascript" src="/Scripts/NinJa/NinJaUI.js"></script>
     <script type="text/javascript" src="/Scripts/NinJa/NinJaUI.js"></script>
     <script type="text/javascript" src="/Scripts/NinJa/NinJaQuery.js"></script>
-@*    <script type="text/javascript" src="/Scripts/NinJa/NinJaMenu.js"></script>*@
+    @*    <script type="text/javascript" src="/Scripts/NinJa/NinJaMenu.js"></script>*@
     <script type="text/javascript" src="/Scripts/NinJa/NinJaGridView.js"></script>
     @*<script type="text/javascript" src="/Scripts/NinJa/NinJaTemplateList.js"></script>*@
-@*    <script type="text/javascript" src="/Scripts/NinJa/NinJaValidation.js"></script>*@
+    @*    <script type="text/javascript" src="/Scripts/NinJa/NinJaValidation.js"></script>*@
     @RenderSection("Scripts", false)
 </head>
 
 <body>
-    <header>
-        <div id="title">
-            <h1>Fountainhead College of Technology Data Portal</h1>
-        </div>
+    <div id="page">
+        <header>
+            <div id="title">
+                <h1>Fountainhead College of Technology Data Portal</h1>
+            </div>
 
-        <div id="logindisplay">
-            @Html.Partial("_LogOnPartial")
-        </div>
-        <div id="menucontainer">
-            <ul id="menu">
-                <li>@Html.ActionLink("Home", "Index", "Home")</li>
-                <li>@Html.ActionLink("Students", "Index", "Student")</li>
-                <li>@Html.ActionLink("Courses", "Index", "Course")</li>
-                <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
-                @*                    <li>@Html.ActionLink("Departments", "Index", "Department")</li>*@
-            </ul>
-        </div>
-    </header>
+            <div id="logindisplay">
+                @Html.Partial("_LogOnPartial")
+            </div>
+            <div id="menucontainer">
+                <ul id="menu">
+                    <li>@Html.ActionLink("Home", "Index", "Home")</li>
+                    <li>@Html.ActionLink("Students", "Index", "Student")</li>
+                    <li>@Html.ActionLink("Courses", "Index", "Course")</li>
+                    <li>@Html.ActionLink("Instructors", "Index", "Instructor")</li>
+                    <li>@Html.ActionLink("Departments", "Index", "Department")</li>
+                </ul>
+            </div>
+        </header>
 
-    <div id="main">
-        @RenderBody()
+        <div id="main">
+            @RenderBody()
+        </div>
     </div>
-
     <footer>
         &copy; @DateTime.Now.Year Fountainhead College Of Technology
     </footer>

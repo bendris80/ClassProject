@@ -19,6 +19,6 @@ namespace ClassProject.Models
 
         public int DepartmentID { get; set; }
         public vmDepartment Department { get; set; }
-        public List<Department> Departments = new List<Department>();
+        public List<Department> Departments { get; set; }
     }
 }

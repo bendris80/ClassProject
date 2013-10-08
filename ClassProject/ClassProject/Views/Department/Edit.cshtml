@@ -1,10 +1,10 @@
-﻿@model ClassProject.Models.Department
+﻿@model ClassProject.Models.vmDepartment
 
 @{
-    ViewBag.Title = "Edit";
+    ViewBag.Title = "Edit Department Name";
 }
 
-<h2>Edit</h2>
+<h2>@ViewBag.Title</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -12,10 +12,9 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Department</legend>
+        <legend>Details</legend>
 
-        @Html.HiddenFor(model => model.DepartmentID)
-        @Html.HiddenFor(model => model.Timestamp)
+        @Html.HiddenFor(model => model.ID)
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Name)
@@ -23,30 +22,6 @@
         <div class="editor-field">
             @Html.EditorFor(model => model.Name)
             @Html.ValidationMessageFor(model => model.Name)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Budget)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Budget)
-            @Html.ValidationMessageFor(model => model.Budget)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.StartDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.StartDate)
-            @Html.ValidationMessageFor(model => model.StartDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.PersonID, "Administrator")
-        </div>
-        <div class="editor-field">
-            @Html.DropDownList("PersonID", String.Empty)
-            @Html.ValidationMessageFor(model => model.PersonID)
         </div>
 
         <p>

@@ -23,6 +23,9 @@ namespace ClassProject.Controllers
             Mapper.CreateMap<vmCourse, Course>();
             Mapper.CreateMap<Course, vmCourse>();
 
+            Mapper.CreateMap<vmDepartment, Department>();
+            Mapper.CreateMap<Department, vmDepartment>();
+
             Mapper.CreateMap<vmCourse, CourseDetail>();
             Mapper.CreateMap<CourseDetail, vmCourse>();
 
