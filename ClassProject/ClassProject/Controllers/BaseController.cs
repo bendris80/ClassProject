@@ -24,6 +24,12 @@ namespace ClassProject.Controllers
             Mapper.CreateMap<vmPerson, Person>();
             Mapper.CreateMap<Person, vmPerson>();
 
+            Mapper.CreateMap<vmEnrollment, Enrollment>();
+            Mapper.CreateMap<Enrollment, vmEnrollment>();
+
+            Mapper.CreateMap<vmSemester, Semester>();
+            Mapper.CreateMap<Semester, vmSemester>();
+
             Mapper.CreateMap<vmCourse, Course>();
             Mapper.CreateMap<Course, vmCourse>();
 
@@ -162,6 +168,19 @@ namespace ClassProject.Controllers
                 return _eman;
             }
         }
+
+        private SemesterManager _semman;
+        public SemesterManager SemestersManager
+        {
+            get
+            {
+                if (_semman == null)
+                {
+                    _semman = new SemesterManager();
+                }
+                return _semman;
+            }
+        }
         #endregion
 
         /// <summary>
@@ -213,7 +232,16 @@ namespace ClassProject.Controllers
                     _pubman.Dispose();
                     _pubman = null;
                 }
-
+                if (_eman != null)
+                {
+                    _eman.Dispose();
+                    _eman = null;
+                }
+                if (_semman != null)
+                {
+                    _semman.Dispose();
+                    _semman = null;
+                }
                 base.Dispose(disposing);
             }
         }

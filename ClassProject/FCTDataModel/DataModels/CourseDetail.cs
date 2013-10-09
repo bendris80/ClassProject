@@ -15,15 +15,25 @@ namespace FCTDataModel
         public int ID { get; set; }
         [Column("title")]
         public string Title { get; set; }
+        [Column("description")]
+        public string Description { get; set; }
         [Column("credits")]
         public int Credits { get; set; }
         [Column("last_name")]
-        public int InstructorLast { get; set; }
+        public string InstructorLast { get; set; }
         [Column("first_name")]
-        public int InstructorFirst { get; set; }
+        public string InstructorFirst { get; set; }
         [Column("department")]
-        public int DepartmentName { get; set; }
+        public string DepartmentName { get; set; }
         [Column("textbook")]
-        public int TextBookName { get; set; }
+        public string TextBookName { get; set; }
+
+        public string InstructorName
+        {
+            get
+            {
+                return InstructorLast + ", " + InstructorFirst;
+            }
+        }
     }
 }

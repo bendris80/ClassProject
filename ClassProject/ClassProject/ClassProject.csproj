@@ -171,8 +171,10 @@
     <Compile Include="Controllers\BaseController.cs" />
     <Compile Include="Controllers\CourseController.cs" />
     <Compile Include="Controllers\DepartmentController.cs" />
+    <Compile Include="Controllers\EnrollmentController.cs" />
     <Compile Include="Controllers\HomeController.cs" />
     <Compile Include="Controllers\InstructorController.cs" />
+    <Compile Include="Controllers\SemesterController.cs" />
     <Compile Include="Controllers\StudentController.cs" />
     <Compile Include="Controllers\TextbookController.cs" />
     <Compile Include="Global.asax.cs">
@@ -186,6 +188,7 @@
     <Compile Include="Models\vmInstructor.cs" />
     <Compile Include="Models\vmPerson.cs" />
     <Compile Include="Models\vmPublisher.cs" />
+    <Compile Include="Models\vmSemester.cs" />
     <Compile Include="Models\vmStudent.cs" />
     <Compile Include="Models\vmTextbook.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -367,6 +370,15 @@
     <Content Include="Views\Textbook\Edit.cshtml" />
     <Content Include="Views\Textbook\Details.cshtml" />
     <Content Include="Views\Textbook\Delete.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
+    <Content Include="Views\Enrollment\Index.cshtml" />
+    <Content Include="Views\Enrollment\Create.cshtml" />
+    <Content Include="Views\Enrollment\Details.cshtml" />
+    <Content Include="Views\Enrollment\Delete.cshtml" />
+    <Content Include="Views\Enrollment\Edit.cshtml" />
+    <Content Include="Views\Semester\Create.cshtml" />
+    <Content Include="Views\Semester\Index.cshtml" />
+    <Content Include="Views\Semester\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -381,16 +393,10 @@
     <Content Include="Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Course\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Course\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Course\UpdateCourseCredits.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />

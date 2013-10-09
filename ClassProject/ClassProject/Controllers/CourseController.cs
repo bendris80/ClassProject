@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
+using System.Data;
 
 namespace ClassProject.Controllers
 {
@@ -26,18 +27,22 @@ namespace ClassProject.Controllers
             using (CoursesManager)
             {
                 courses = CoursesManager.GetAllCourseDetails();
-                var dispcourses = Mapper.Map<IEnumerable<vmCourse>>(courses);
-                JsonResult result = Json(courses);
+                //var dispcourses = Mapper.Map<IEnumerable<vmCourse>>(courses);
+                JsonResult result = Json(courses.ToList());
                 return result;
             }
 
         }
+
         //
         // GET: /Course/Details/5
-
         public ActionResult Details(int id)
         {
-            return View();
+            using (CoursesManager)
+            {
+                var disp = Mapper.Map<vmCourse>(CoursesManager.GetAllCourseDetails().Where(d => d.ID == id).FirstOrDefault());
+                return View(disp);
+            }
         }
 
         //
@@ -48,53 +53,129 @@ namespace ClassProject.Controllers
             var disp = new vmCourse();
             using (DeptManager)
             {
-                disp.Departments = DeptManager.GetAllDepartments().ToList();
-                return View(disp);
+                using (InstManager)
+                {
+                    using (PeopleManager)
+                    {
+                        using (TBManager)
+                        {
+                            disp.Departments = DeptManager.GetAllDepartments().ToList();
+                            var inst = InstManager.GetAllInstructors();
+                            var people = PeopleManager.GetAllPeople();
+
+                            var instr = from instructor in inst
+                                        join person in people on instructor.PersonID equals person.ID
+                                        select new KeyValuePair<int, string>(instructor.ID, string.Format("{0}, {1}", person.LastName, person.FirstMidName));
+                            disp.Instructors = instr.ToDictionary(t => t.Key, t => t.Value);
+
+                            disp.Textbooks = TBManager.GetAllTextbooks().ToList();
+                            return View(disp);
+                        }
+                    }
+                }
             }
         }
-
         //
         // POST: /Course/Create
-
         [HttpPost]
-        public ActionResult Create(FormCollection collection)
+        public ActionResult Create(vmCourse course)
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    using (CoursesManager)
+                    {
+                        var item = Mapper.Map<Course>(course);
+                        var success = CoursesManager.AddCourse(item);
+                        if (success)
+                        {
+                            return RedirectToAction("Details", new { id = item.ID });
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Unable to save course. Please try again.");
+                        }
+                    }
+                }
             }
-            catch
+            catch (DataException)
             {
-                return View();
+                //Log the error (add a variable name after DataException)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+            return View(course);
         }
 
         //
         // GET: /Course/Edit/5
-
+        [HttpGet]
         public ActionResult Edit(int id)
         {
-            return View();
-        }
+            using (DeptManager)
+            {
+                using (InstManager)
+                {
+                    using (PeopleManager)
+                    {
+                        using (TBManager)
+                        {
+                            using (CoursesManager)
+                            {
+                                var disp = Mapper.Map<vmCourse>(CoursesManager.GetCoursebyID(id));
+                                disp.Departments = DeptManager.GetAllDepartments().ToList();
+                                var inst = InstManager.GetAllInstructors();
+                                var people = PeopleManager.GetAllPeople();
 
+                                var instr = from instructor in inst
+                                            join person in people on instructor.PersonID equals person.ID
+                                            select new KeyValuePair<int, string>(instructor.ID, string.Format("{0}, {1}", person.LastName, person.FirstMidName));
+                                disp.Instructors = instr.ToDictionary(t => t.Key, t => t.Value);
+
+                                disp.Textbooks = TBManager.GetAllTextbooks().ToList();
+                                return View(disp);
+                            }
+                        }
+                    }
+                }
+            }
+        }
         //
         // POST: /Course/Edit/5
-
         [HttpPost]
-        public ActionResult Edit(int id, FormCollection collection)
+        public ActionResult Edit(vmCourse course)
         {
             try
             {
-                // TODO: Add update logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    using (CoursesManager)
+                    {
+                        var item = CoursesManager.GetCoursebyID(course.ID);
+                        item.Credits = course.Credits;
+                        item.DepartmentID = course.DepartmentID;
+                        item.Description = course.Description;
+                        item.InstructorID = course.InstructorID;
+                        item.TextBookID = course.TextBookID;
+                        item.Title = course.Title;
+                        var success = CoursesManager.UpdateCourse(item);
+                        if (success)
+                        {
+                            return RedirectToAction("Details", new { id = item.ID });
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Unable to save course. Please try again.");
+                        }
+                    }
+                }
             }
-            catch
+            catch (DataException)
             {
-                return View();
+                //Log the error (add a variable name after DataException)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+            return View(course);
         }
 
         //
@@ -102,24 +183,36 @@ namespace ClassProject.Controllers
 
         public ActionResult Delete(int id)
         {
-            return View();
+            using (CoursesManager)
+            {
+                var disp = Mapper.Map<vmCourse>(CoursesManager.GetAllCourseDetails().Where(d => d.ID == id).FirstOrDefault());
+                return View(disp);
+            }
         }
 
         //
         // POST: /Course/Delete/5
 
         [HttpPost]
-        public ActionResult Delete(int id, FormCollection collection)
+        public ActionResult Delete(vmCourse course)
         {
             try
             {
-                // TODO: Add delete logic here
-
-                return RedirectToAction("Index");
+                using (CoursesManager)
+                {
+                    var item = CoursesManager.GetCoursebyID(course.ID);
+                    var success = CoursesManager.RemoveCourse(item);
+                    if (success)
+                    {
+                        return RedirectToAction("Index");
+                    }
+                    throw new DataException();
+                }
             }
-            catch
+            catch (DataException)
             {
-                return View();
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+                return View(course);
             }
         }
     }
