@@ -12,6 +12,8 @@ namespace FCTDataModel
     {
         [Column("id")]
         public int ID { get; set; }
+        [Column("semester_id")]
+        public int SemesterID { get; set; }
         [Column("course_id")]
         public int CourseID { get; set; }
         [Column("student_id")]

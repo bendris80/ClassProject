@@ -37,6 +37,7 @@ namespace FCTDataModel
 
         public DbSet<LogEntry> LogEntries { get; set; }
         public DbSet<Author> Authors { get; set; }
+        public DbSet<Semester> Semesters { get; set; }
         public DbSet<Course> Courses { get; set; }
         public DbSet<CourseDetail> CourseDetails { get; set; }
         public DbSet<Department> Departments { get; set; }

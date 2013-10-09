@@ -1,0 +1,54 @@
+﻿@model IEnumerable<ClassProject.Models.vmEnrollment>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+<p>
+    @Html.ActionLink("Create New", "Create")
+</p>
+<table>
+    <tr>
+        <th>CourseID
+        </th>
+        <th>PersonID
+        </th>
+        <th>Grade
+        </th>
+        <th>Semester</th>
+        <th></th>
+    </tr>
+
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Course.Title)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Student.Person.FullName)
+            </td>
+            <td>
+                @if (item.Grade == decimal.Zero)
+                {
+                    <label>N/A</label>
+                }
+                else
+                {
+                    @Html.DisplayFor(modelItem => item.Grade)
+                }
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Semester.Name)
+            </td>
+            <td>
+                @Html.ActionLink("Edit", "Edit", new { id = item.ID }) |
+            @Html.ActionLink("Details", "Details", new { id = item.ID }) |
+            @Html.ActionLink("Delete", "Delete", new { id = item.ID })
+            </td>
+        </tr>
+    }
+
+</table>

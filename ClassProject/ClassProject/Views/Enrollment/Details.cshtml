@@ -1,0 +1,32 @@
+﻿@model ClassProject.Models.vmEnrollment
+
+@{
+    ViewBag.Title = "ViewPage1";
+}
+
+<h2>ViewPage1</h2>
+
+<fieldset>
+    <legend>vmEnrollment</legend>
+
+    <div class="display-label">Student</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Student.Person.FullName)
+    </div>
+    <div class="display-label">Course</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Course.Title)
+    </div>
+    <div class="display-label">Semester</div>
+        <div class="display-field">
+            @Html.DisplayFor(model => model.Semester.Name)
+        </div>
+    <div class="display-label">Grade</div>
+    <div class="display-field">
+        @Html.DisplayFor(model => model.Grade)
+    </div>
+</fieldset>
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>

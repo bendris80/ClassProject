@@ -1,23 +1,20 @@
 ﻿using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
-using System.ComponentModel.DataAnnotations.Schema;
 using System.Linq;
-using System.Text;
-using System.Threading.Tasks;
+using System.Web;
 
-namespace FCTDataModel
+namespace ClassProject.Models
 {
-    [Table("semester")]
-    public class Semester
+    public class vmSemester
     {
-        [Column("id"), Key]
+       
         public int ID { get; set; }
-        [Column("name")]
+        [Display(Name="Name")]
         public string Name { get; set; }
-        [Column("start_date")]
+        [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }
-        [Column("end_date")]
+        [Display(Name = "End Date")]
         public DateTime EndDate { get; set; }
     }
 }
