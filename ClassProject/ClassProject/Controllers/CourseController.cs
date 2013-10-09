@@ -6,6 +6,7 @@ using System.Linq;
 using System.Web;
 using System.Web.Mvc;
 using AutoMapper;
+using System.Data;
 
 namespace ClassProject.Controllers
 {
@@ -26,7 +27,7 @@ namespace ClassProject.Controllers
             using (CoursesManager)
             {
                 courses = CoursesManager.GetAllCourseDetails();
-                var dispcourses = Mapper.Map<IEnumerable<vmCourse>>(courses);
+                //var dispcourses = Mapper.Map<IEnumerable<vmCourse>>(courses);
                 JsonResult result = Json(courses);
                 return result;
             }
@@ -37,7 +38,11 @@ namespace ClassProject.Controllers
 
         public ActionResult Details(int id)
         {
-            return View();
+            using (CoursesManager)
+            {
+                var disp = Mapper.Map<vmCourse>(CoursesManager.GetAllCourseDetails().Where(d => d.ID == id).FirstOrDefault());
+                return View(disp);
+            }
         }
 
         //
@@ -48,7 +53,7 @@ namespace ClassProject.Controllers
             var disp = new vmCourse();
             using (DeptManager)
             {
-                using(InstManager)
+                using (InstManager)
                 {
                     using (PeopleManager)
                     {
@@ -56,9 +61,13 @@ namespace ClassProject.Controllers
                         {
                             disp.Departments = DeptManager.GetAllDepartments().ToList();
                             var inst = InstManager.GetAllInstructors();
-                            var people = PeopleManager.FindPeople(p => inst.Select(i => i.PersonID).Contains(p.ID));
-                            
-                            
+                            var people = PeopleManager.GetAllPeople();
+
+                            var instr = from instructor in inst
+                                        join person in people on instructor.PersonID equals person.ID
+                                        select new KeyValuePair<int, string>(instructor.ID, string.Format("{0}, {1}", person.LastName, person.FirstMidName));
+                            disp.Instructors = instr.ToDictionary(t => t.Key, t => t.Value);
+
                             disp.Textbooks = TBManager.GetAllTextbooks().ToList();
                             return View(disp);
                         }
@@ -75,14 +84,29 @@ namespace ClassProject.Controllers
         {
             try
             {
-                // TODO: Add insert logic here
-
-                return RedirectToAction("Index");
+                if (ModelState.IsValid)
+                {
+                    using (CoursesManager)
+                    {
+                        var item = Mapper.Map<Course>(course);
+                        var success = CoursesManager.AddCourse(item);
+                        if (success)
+                        {
+                            return RedirectToAction("Details", new {id = item.ID});
+                        }
+                        else
+                        {
+                            ModelState.AddModelError("", "Unable to save course. Please try again.");
+                        }
+                    }
+                }
             }
-            catch
+            catch (DataException)
             {
-                return View();
+                //Log the error (add a variable name after DataException)
+                ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
             }
+            return View(course);
         }
 
         //

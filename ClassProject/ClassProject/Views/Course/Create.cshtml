@@ -34,7 +34,7 @@
             @Html.LabelFor(model => model.InstructorName)
         </div>
         <div class="editor-field">
-            @Html.DropDownListFor(model => model.InstructorID, new SelectList(Model.Instructors, "ID", "Name"))
+            @Html.DropDownListFor(model => model.InstructorID, new SelectList(Model.Instructors, "Key", "Value"))
             @Html.ValidationMessageFor(model => model.InstructorID)
         </div>
 
@@ -47,27 +47,11 @@
         </div>
 
         <div class="editor-label">
-            @Html.LabelFor(model => model.DepartmentName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.DepartmentName)
-            @Html.ValidationMessageFor(model => model.DepartmentName)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.TextBookID)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.TextBookID)
-            @Html.ValidationMessageFor(model => model.TextBookID)
-        </div>
-
-        <div class="editor-label">
             @Html.LabelFor(model => model.TextBookName)
         </div>
         <div class="editor-field">
-            @Html.EditorFor(model => model.TextBookName)
-            @Html.ValidationMessageFor(model => model.TextBookName)
+            @Html.DropDownListFor(model => model.TextBookID, new SelectList(Model.Textbooks, "ID", "Name"))
+            @Html.ValidationMessageFor(model => model.TextBookID)
         </div>
 
         <div class="editor-label">

@@ -367,6 +367,7 @@
     <Content Include="Views\Textbook\Edit.cshtml" />
     <Content Include="Views\Textbook\Details.cshtml" />
     <Content Include="Views\Textbook\Delete.cshtml" />
+    <Content Include="Views\Course\Details.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />
@@ -381,16 +382,10 @@
     <Content Include="Views\Course\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
-    <Content Include="Views\Course\Details.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
     <Content Include="Views\Course\Edit.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Content Include="Views\Course\Delete.cshtml" />
-  </ItemGroup>
-  <ItemGroup>
-    <Content Include="Views\Course\UpdateCourseCredits.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <WCFMetadata Include="Service References\" />
