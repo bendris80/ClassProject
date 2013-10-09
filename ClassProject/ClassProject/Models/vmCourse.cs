@@ -17,10 +17,10 @@ namespace ClassProject.Models
 
         public int InstructorID { get; set; }
 
-        public int InstructorLast { get; set; }
-        public int InstructorFirst { get; set; }
+        public string InstructorLast { get; set; }
+        public string InstructorFirst { get; set; }
         [Display(Name = "Instructor")]
-        public string InstructorName { get { return InstructorLast + ", " + InstructorFirst; } }
+        public string InstructorName { get; set; }
 
 
         public Dictionary<int, string> Instructors = new Dictionary<int, string>();

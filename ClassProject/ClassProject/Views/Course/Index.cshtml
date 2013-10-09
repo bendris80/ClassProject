@@ -1,7 +1,5 @@
 ﻿@model ClassProject.Models.vmCourseSearch
-@section Scripts{
-    @Scripts.Render("~/bundles/NinJa")
-    @if (false)
+@if (false)
     {
         <script type="text/javascript" src="Scripts/NinJa/NinJa"></script>
         <script type="text/javascript" src="Scripts/NinJa/NinJaAjax.js"></script>
@@ -9,9 +7,15 @@
         <script type="text/javascript" src="Scripts/NinJa/NinJaUI.js"></script>
         <script type="text/javascript" src="Scripts/NinJa/NinJaQuery.js"></script>
     }
+@section Scripts{
+    
     <script type="text/javascript">
         var request = new AjaxRequest();
         request.Url = "/Course/Index";
+        request.Verb = Verb.Post;
+        
+        request.OnSuccess.Add(bind);
+        request.OnError.Add(error);
 
         function getfields() {
             $GridView("courses").Loading("Loading...");
@@ -25,8 +29,7 @@
         function error() {
             $GridView("courses").Loading("An error occurred during the search.");
         }
-        request.OnSuccess.Add(bind);
-        request.OnError.Add(error);
+        
 
         @*Page.OnLoad.Add(function () {
             $Button("vend").OnClick.Add(function () {
@@ -58,7 +61,9 @@
 <table class="gridview" id="courses" width="99%">
     <thead>
         <tr>
-            <th></th>
+            <th width="50" data="Course/Details/{ID}" display="Details" type="link"></th>
+            <th width="50" data="Course/Edit/{ID}" display="Edit" type="link"></th>
+            <th width="50" data="Course/Delete/{ID}" display="Delete" type="link"></th>
             <th data="DepartmentName">Department</th>
             <th data="Title">Title</th>
             <th data="Credits">Credits</th>
