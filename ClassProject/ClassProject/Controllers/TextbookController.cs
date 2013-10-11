@@ -29,11 +29,8 @@ namespace ClassProject.Controllers
                             var disp = Mapper.Map<IEnumerable<vmTextbook>>(items);
                             foreach (var d in disp)
                             {
-                                d.Author = new vmAuthor();
                                 d.Author = Mapper.Map<vmAuthor>(AuthorsManager.GetAuthorbyID(d.AuthorID));
-                                d.Author.Person = new vmPerson();
                                 d.Author.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(d.Author.PersonID));
-                                d.Publisher = new vmPublisher();
                                 d.Publisher = Mapper.Map<vmPublisher>(PublishersManager.GetPublisherbyID(d.PublisherID));
                             }
                             return View(disp);
@@ -74,9 +71,6 @@ namespace ClassProject.Controllers
         public ActionResult Create()
         {
             var disp = new vmTextbook();
-            disp.Publisher = new vmPublisher();
-            disp.Author = new vmAuthor();
-            disp.Author.Person = new vmPerson();
             return View(disp);
         }
         //

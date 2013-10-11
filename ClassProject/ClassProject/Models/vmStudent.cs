@@ -6,6 +6,12 @@ namespace ClassProject.Models
 {
     public class vmStudent
     {
+
+		public vmStudent()
+		{
+			Person = new vmPerson();
+		}
+
         public int ID { get; set; }
 
         public int PersonID { get; set; }

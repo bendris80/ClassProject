@@ -7,6 +7,12 @@ namespace ClassProject.Models
 {
     public class vmCourse
     {
+		public vmCourse()
+		{
+			Instructors = new Dictionary<int, string>();
+			Departments = new List<Department>();
+			Textbooks = new List<Textbook>();
+		}
         public int ID { get; set; }
 
         [Display(Name="Course Title"), MaxLength(50), Required(ErrorMessage = "Title is required.")]
@@ -23,7 +29,7 @@ namespace ClassProject.Models
         public string InstructorName { get; set; }
 
 
-        public Dictionary<int, string> Instructors = new Dictionary<int, string>();
+		public Dictionary<int, string> Instructors;
 
         public int DepartmentID { get; set; }
 
@@ -31,12 +37,12 @@ namespace ClassProject.Models
         public string DepartmentName { get; set; }
 
 
-        public List<Department> Departments = new List<Department>();
+        public List<Department> Departments;
         
         public int TextBookID { get; set; }
         [Display(Name = "Course TextBook")]
         public string TextBookName { get; set; }
-        public List<Textbook> Textbooks = new List<Textbook>();
+        public List<Textbook> Textbooks;
 
         [Display(Name="Course Description")]
         public string Description { get; set; }
