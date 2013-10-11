@@ -6,7 +6,11 @@ namespace ClassProject.Models
 {
     public class vmTextbook
     {
-        
+		public vmTextbook()
+		{
+			Publisher = new vmPublisher();
+			Author = new vmAuthor();
+		}
         public int ID { get; set; }
         [Display(Name = "Name")]
         public string Name { get; set; }

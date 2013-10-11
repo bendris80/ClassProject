@@ -1,30 +1,61 @@
 ﻿@model ClassProject.Models.vmInstructor
 
 @{
-    ViewBag.Title = "Details";
+	ViewBag.Title = "Details";
 }
 
 <h2>Details</h2>
 
-<fieldset>
-    <legend>vmInstructor</legend>
+<div class="column">
+	<fieldset>
+		<legend>vmInstructor</legend>
 
-    <div class="display-label">HireDate</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.HireDate)
-    </div>
+		<div class="display-label">HireDate</div>
+		<div class="display-field">
+			@Html.DisplayFor(model => model.HireDate)
+		</div>
 
-    <div class="display-label">Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Person.FullName)
-    </div>
+		<div class="display-label">Name</div>
+		<div class="display-field">
+			@Html.DisplayFor(model => model.Person.FullName)
+		</div>
 
-    <div class="display-label">Department</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Department.Name)
-    </div>
-</fieldset>
+		<div class="display-label">Department</div>
+		<div class="display-field">
+			@Html.DisplayFor(model => model.Department.Name)
+		</div>
+	</fieldset>
+</div>
+<div class="column">
+	@using (Html.BeginForm("CheckOut", "Instructor", FormMethod.Post, new { id = "out" }))
+ {
+		<fieldset>
+			<legend>Check Out Textbook</legend>
+			<div class="editor-field">
+				@Html.HiddenFor(model => model.ID)
+				@Html.DropDownList("books", new SelectList(Model.Textbooks, "ID", "Name"))
+				<input type="submit" value="Check Out" style="float: right" />
+			</div>
+		</fieldset>
+ }
+	<fieldset>
+		<legend>Currently Checked Out</legend>
+		<ul>
+			@foreach (var item in Model.InstructorTextbooks)
+   {
+	   using (Html.BeginForm("CheckOut", "Instructor", FormMethod.Post, new { id = item.ID }))
+	   {
+				<li class="display-field" style="list-style-type: disc">
+					@Html.HiddenFor(modelItem => item.ID)
+					@Html.HiddenFor(model => model.ID)
+					@Html.DisplayFor(modelItem => item.Name)<input type="submit" value="Check Out" style="float:right"/>
+				</li>
+	   }
+   }
+		</ul>
+	</fieldset>
+</div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+	@Html.ActionLink("Edit", "Edit", new { id = Model.ID }) |
     @Html.ActionLink("Back to List", "Index")
 </p>

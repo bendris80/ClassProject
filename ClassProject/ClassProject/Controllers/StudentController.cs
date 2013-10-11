@@ -66,7 +66,6 @@ namespace ClassProject.Controllers
         public ActionResult Create()
         {
             var disp = new vmStudent();
-            disp.Person = new vmPerson();
             return View(disp);
         }
         //
@@ -129,7 +128,6 @@ namespace ClassProject.Controllers
                     if (item != null)
                     {
                         var disp = Mapper.Map<vmStudent>(item);
-                        disp.Person = new vmPerson();
                         disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(disp.PersonID));
                         return View(disp);
                     }

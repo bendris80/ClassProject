@@ -105,5 +105,66 @@ namespace FCTDataModel
             return db.Instructors.Where(filter);
         }
         #endregion
+
+		#region InstructorBook
+		public IEnumerable<InstructorBook> GetAllInstructorBooks()
+		{
+			return db.InstructorBooks;
+		}
+
+		public InstructorBook GetInstructorBookbyID(int id)
+		{
+			return db.InstructorBooks.Where(v => v.ID == id).FirstOrDefault();
+		}
+
+		public bool AddInstructorBook(InstructorBook v)
+		{
+			db.InstructorBooks.Add(v);
+			if (!Save())
+			{
+				return false;
+			}
+			return true;
+
+		}
+
+		public bool RemoveInstructorBook(InstructorBook v)
+		{
+			if (!db.InstructorBooks.Local.Contains(v))
+			{
+				db.InstructorBooks.Attach(v);
+			}
+			db.InstructorBooks.Remove(v);
+			if (!Save())
+			{
+				return false;
+			}
+			return true;
+		}
+
+		public bool UpdateInstructorBook(InstructorBook v)
+		{
+			if (!db.InstructorBooks.Local.Contains(v))
+			{
+				db.InstructorBooks.Attach(v);
+			}
+			db.Entry<InstructorBook>(v).State = EntityState.Modified;
+			if (!Save())
+			{
+				return false;
+			}
+			return true;
+
+		}
+
+		public IEnumerable<InstructorBook> FindInstructorBooks(Func<InstructorBook, bool> filter)
+		{
+			if (filter == null)
+			{
+				return null;
+			}
+			return db.InstructorBooks.Where(filter);
+		}
+		#endregion
     }
 }

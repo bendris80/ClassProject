@@ -7,6 +7,15 @@ namespace ClassProject.Models
 {
     public class vmEnrollment
     {
+		public vmEnrollment()
+		{
+			Course = new vmCourse();
+			Student = new vmStudent();
+			Semester = new vmSemester();
+			Semesters = new List<Semester>();
+			Courses = new List<Course>();
+			Students = new Dictionary<int, string>();
+		}
         public int ID { get; set; }
         [Required]
         public int CourseID { get; set; }

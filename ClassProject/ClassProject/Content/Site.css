@@ -10,11 +10,6 @@
 .normal {
   color: #003dff;
 }
-/*----------------------------------------------------------
-The base color for this template is #5c87b2. If you'd like
-to use a different color start by replacing all instances of
-#5c87b2 with your new color.
-----------------------------------------------------------*/
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -66,10 +61,15 @@ header h1 {
   clear: both;
   background-color: #fff;
   padding: 40px 32px 50px 32px;
+  margin-left: 20px;
+  margin-right: 20px;
+  border-bottom: 1px solid black;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  box-shadow: 5px 5px 10px #000000;
 }
 footer {
   height: 20px;
-  border-top: 1px solid #000000;
   color: black;
   background-color: #5c87b2;
   text-align: center;
@@ -91,7 +91,7 @@ a:active {
 p,
 ul {
   margin-bottom: 20px;
-  line-height: 1.6em;
+  line-height: 25px;
 }
 header,
 footer,
@@ -99,8 +99,11 @@ nav,
 section {
   display: block;
 }
-/* HEADINGS   
-----------------------------------------------------------*/
+.column {
+  width: 49%;
+  vertical-align: top;
+  display: inline-block;
+}
 h1,
 h2,
 h3,
@@ -128,22 +131,28 @@ h5,
 h6 {
   font-size: 1em;
 }
-/* PRIMARY LAYOUT ELEMENTS   
-----------------------------------------------------------*/
-/* you can specify a greater or lesser percentage for the 
-page width. Or, you can specify an exact pixel width. */
-/* TAB MENU   
-----------------------------------------------------------*/
+nav,
+#menucontainer {
+  margin-top: 40px;
+  clear: both;
+  float: left;
+  margin-left: 20px;
+  margin-right: 20px;
+}
 ul#menu {
   border-bottom: 1px #5C87B2 solid;
   padding: 0 0 2px;
   position: relative;
   margin: 0;
   text-align: right;
+  z-index: 1;
 }
 ul#menu li {
   display: inline;
   list-style: none;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  box-shadow: 5px 5px 10px #000000;
 }
 ul#menu li#greeting {
   padding: 10px 10px;
@@ -175,12 +184,14 @@ ul#menu li.selected a {
   background-color: #fff;
   color: #000;
 }
-/* FORM LAYOUT ELEMENTS   
-----------------------------------------------------------*/
 fieldset {
-  border: 1px solid #ddd;
-  padding: 0 1.4em 1.4em 1.4em;
-  margin: 0 0 1.5em 0;
+  border: 1px solid black;
+  border-radius: 10px;
+  padding: 20px;
+  margin: 10px;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  box-shadow: 5px 5px 10px #000000;
 }
 legend {
   font-size: 1.2em;
@@ -207,8 +218,6 @@ input[type="submit"] {
   font-size: 1.2em;
   padding: 5px;
 }
-/* MISC  
-----------------------------------------------------------*/
 .selectedrow {
   background-color: #EEEEEE;
 }
@@ -217,12 +226,6 @@ input[type="submit"] {
 }
 .error {
   color: Red;
-}
-nav,
-#menucontainer {
-  margin-top: 40px;
-  clear: both;
-  float: left;
 }
 div#title {
   display: block;
@@ -252,8 +255,6 @@ div#title {
   color: white;
   text-decoration: none;
 }
-/* Styles for validation helpers
------------------------------------------------------------*/
 .field-validation-error {
   color: #ff0000;
 }
@@ -271,15 +272,9 @@ div#title {
 .validation-summary-valid {
   display: none;
 }
-/* Styles for editor and display helpers
-----------------------------------------------------------*/
 .display-label,
 .editor-label {
-  margin: 1em 0 0 0;
-}
-.display-field,
-.editor-field {
-  margin: 0.5em 0 0 0;
+  margin: 5px;
 }
 .text-box {
   width: 30em;
@@ -292,6 +287,10 @@ div#title {
 }
 .gridviewcontainer {
   border: 1px solid #000000;
+  margin: 10px;
+  -moz-box-shadow: 5px 5px 10px #000000;
+  -webkit-box-shadow: 5px 5px 10px #000000;
+  box-shadow: 5px 5px 10px #000000;
 }
 .gridview {
   font-size: 10pt;
