@@ -4,13 +4,13 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>@ViewBag.Title</h2>
 
 <h3>Are you sure you want to delete this?</h3>
 @using (Html.BeginForm())
 {
     <fieldset>
-        <legend>vmEnrollment</legend>
+        <legend>Enrollment</legend>
         @Html.HiddenFor(model => model.CourseID)
         <div class="display-label">Student</div>
         <div class="display-field">
