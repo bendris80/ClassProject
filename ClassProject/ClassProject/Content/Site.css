@@ -10,6 +10,11 @@
 .normal {
   color: #003dff;
 }
+input {
+  background: #04699c;
+  color: #ffffff;
+  border-radius: 5px;
+}
 * {
   -webkit-box-sizing: border-box;
   -moz-box-sizing: border-box;
@@ -92,6 +97,7 @@ p,
 ul {
   margin-bottom: 20px;
   line-height: 25px;
+  padding-left: 20px;
 }
 header,
 footer,
@@ -184,6 +190,12 @@ ul#menu li.selected a {
   background-color: #fff;
   color: #000;
 }
+#detailsColumn1 {
+  width: 45%;
+}
+#detailsColumn2 {
+  width: 54%;
+}
 fieldset {
   border: 1px solid black;
   border-radius: 10px;
@@ -275,6 +287,9 @@ div#title {
 .display-label,
 .editor-label {
   margin: 5px;
+}
+.display-field {
+  height: 40px;
 }
 .text-box {
   width: 30em;

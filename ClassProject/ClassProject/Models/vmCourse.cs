@@ -44,7 +44,7 @@ namespace ClassProject.Models
         public string TextBookName { get; set; }
         public List<Textbook> Textbooks;
 
-        [Display(Name="Course Description")]
+        [Display(Name="Course Description"), DataType(DataType.MultilineText)]
         public string Description { get; set; }
     }
 

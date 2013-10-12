@@ -16,6 +16,7 @@
 @details_color: #000000;
 @details_label_color: #da532c;
 @helper_color: #007c03;
+@fh_dark:#04699C;
 //#endregion
 
 //#region action colors (can be editted)
@@ -23,6 +24,9 @@
 @high_color: rgb(255, 133, 0);
 @medium_color: rgb(56, 201, 0);
 @normal_color: rgb(0, 61, 255);
+
+//#Default Padding
+@default_padding:20px;
 
 .veryhigh
 {
@@ -44,6 +48,12 @@
 	color: @normal_color;
 }
 //#endregion
+
+input {
+    background:@fh_dark;
+    color:@menu_color;
+    border-radius:5px;
+}
 
 //#region main styles (DO NOT EDIT)
 *
@@ -154,6 +164,7 @@ p, ul
 {
 	margin-bottom: 20px;
 	line-height: 25px;
+    padding-left:@default_padding;
 }
 
 header,
@@ -277,6 +288,14 @@ ul#menu
 		}
 }
 //#endregion
+
+ #detailsColumn1 {
+     width: 45%;
+ }
+
+ #detailsColumn2 {
+     width: 54%;
+ }
 
 //#region Form Elements (can be editted)
 fieldset
@@ -415,6 +434,10 @@ div#title
 .editor-label
 {
 	margin: 5px;
+}
+
+.display-field {
+    height:40px;
 }
 
 .text-box
