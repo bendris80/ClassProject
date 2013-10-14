@@ -1,7 +1,6 @@
 ﻿using AutoMapper;
 using ClassProject.Models;
 using FCTDataModel;
-using Daiz.DotNet;
 using System;
 using System.Collections.Generic;
 using System.Data;
@@ -81,8 +80,8 @@ namespace ClassProject.Controllers
 			using (InstManager)
 			{
 				var item = new InstructorBook();
-				item.InstructorID = c[0].ToInt();
-				item.TextBookID = c[1].ToInt();
+				item.InstructorID = Convert.ToInt32(c[0]);
+				item.TextBookID = Convert.ToInt32(c[1]);
 				var success = InstManager.AddInstructorBook(item);
 				if (!success)
 				{
@@ -97,7 +96,7 @@ namespace ClassProject.Controllers
 		{
 			using (InstManager)
 			{
-				var item = InstManager.FindInstructorBooks(b => b.InstructorID == c[0].ToInt() && b.TextBookID == c[1].ToInt()).FirstOrDefault();
+				var item = InstManager.FindInstructorBooks(b => b.InstructorID == Convert.ToInt32(c[0]) && b.TextBookID == Convert.ToInt32(c[1])).FirstOrDefault();
 				if (item != null)
 				{
 					var success = InstManager.RemoveInstructorBook(item);
@@ -106,7 +105,7 @@ namespace ClassProject.Controllers
 						ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
 					}
 				}
-				return RedirectToAction("Details", new { id = c[0].ToInt() });
+				return RedirectToAction("Details", new { id = Convert.ToInt32(c[0]) });
 			}
 		}
 

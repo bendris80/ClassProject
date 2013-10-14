@@ -10,7 +10,7 @@ namespace ClassProject.Models
     {
        
         public int ID { get; set; }
-        [Display(Name="Name")]
+        [Display(Name="Semester")]
         public string Name { get; set; }
         [Display(Name = "Start Date")]
         public DateTime StartDate { get; set; }

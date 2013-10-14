@@ -1,23 +1,18 @@
 ﻿@model ClassProject.Models.vmInstructor
 
 @{
-	ViewBag.Title = "Details";
+	ViewBag.Title = Model.Person.FullName;
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
 
 <div class="column">
 	<fieldset>
-		<legend>vmInstructor</legend>
+		<legend>Details</legend>
 
-		<div class="display-label">HireDate</div>
+		<div class="display-label">Hire Date</div>
 		<div class="display-field">
 			@Html.DisplayFor(model => model.HireDate)
-		</div>
-
-		<div class="display-label">Name</div>
-		<div class="display-field">
-			@Html.DisplayFor(model => model.Person.FullName)
 		</div>
 
 		<div class="display-label">Department</div>
@@ -48,7 +43,7 @@
 				<li class="display-field" style="list-style-type: disc">
 					@Html.HiddenFor(modelItem => item.ID)
 					@Html.HiddenFor(model => model.ID)
-					@Html.DisplayFor(modelItem => item.Name)<input type="submit" value="Check Out" style="float:right"/>
+					@Html.DisplayFor(modelItem => item.Name)<input type="submit" value="Check In" style="float:right"/>
 				</li>
 	   }
    }
