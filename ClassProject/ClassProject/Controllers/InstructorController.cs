@@ -53,19 +53,25 @@ namespace ClassProject.Controllers
 						{
 							var item = InstManager.GetInstructorbyID(id);
 							var disp = Mapper.Map<vmInstructor>(item);
-							disp.Person = new vmPerson();
-							disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
-							disp.Department = new vmDepartment();
-							disp.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(item.DepartmentID));
-							disp.Textbooks = TBManager.GetAllTextbooks().ToList();
-							var books = InstManager.FindInstructorBooks(i => i.InstructorID == id).Select(i => i.TextBookID);
-							foreach (var b in books)
-							{
-								var t = TBManager.GetTextbookbyID(b);
-								if (t != null)
+							if (disp != null)
+							{					
+								disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
+								disp.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(item.DepartmentID));
+								disp.Textbooks = TBManager.GetAllTextbooks().ToList();
+								var books = InstManager.FindInstructorBooks(i => i.InstructorID == id).Select(i => i.TextBookID);
+								foreach (var b in books)
 								{
-									disp.InstructorTextbooks.Add(Mapper.Map<vmTextbook>(t));
+									var t = TBManager.GetTextbookbyID(b);
+									if (t != null)
+									{
+										disp.InstructorTextbooks.Add(Mapper.Map<vmTextbook>(t));
+									}
 								}
+							}
+							else
+							{
+								disp = new vmInstructor();
+								ModelState.AddModelError("", "Failed to load details for requested item.");
 							}
 							return View(disp);
 						}
@@ -85,7 +91,7 @@ namespace ClassProject.Controllers
 				var success = InstManager.AddInstructorBook(item);
 				if (!success)
 				{
-					ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+					ModelState.AddModelError("", "Unable to checkout textbook. Please try again.");
 				}
 				return RedirectToAction("Details", new { id = item.InstructorID });
 			}
@@ -102,7 +108,7 @@ namespace ClassProject.Controllers
 					var success = InstManager.RemoveInstructorBook(item);
 					if (!success)
 					{
-						ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+						ModelState.AddModelError("", "Unable to check in textbook. Try again.");
 					}
 				}
 				return RedirectToAction("Details", new { id = Convert.ToInt32(c[0]) });
@@ -117,8 +123,6 @@ namespace ClassProject.Controllers
 			using (DeptManager)
 			{
 				var disp = new vmInstructor();
-				disp.Person = new vmPerson();
-				disp.Departments = new List<Department>();
 				disp.Departments = DeptManager.GetAllDepartments().OrderBy(d => d.Name).ToList();
 				return View(disp);
 			}
@@ -149,23 +153,24 @@ namespace ClassProject.Controllers
 								}
 								else
 								{
-									ModelState.AddModelError("", "Unable to save Instructor. Please try again.");
-									return View(inst);
+									throw new DataException("Unable to save Instructor. Please try again.");
 								}
 							}
 							else
 							{
-								ModelState.AddModelError("", "Unable to save person. Please try again.");
-								return View(inst);
+								throw new DataException("Unable to save person. Please try again.");
 							}
 						}
 					}
 				}
 			}
-			catch (DataException)
+			catch (DataException ex)
 			{
-				//Log the error (add a variable name after DataException)
-				ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+				ModelState.AddModelError("", ex.Message);
+			}
+			using (DeptManager)
+			{
+				inst.Departments = DeptManager.GetAllDepartments().OrderBy(d => d.Name).ToList();
 			}
 			return View(inst);
 		}
@@ -183,10 +188,16 @@ namespace ClassProject.Controllers
 					{
 						var item = InstManager.GetInstructorbyID(id);
 						var disp = Mapper.Map<vmInstructor>(item);
-						disp.Person = new vmPerson();
-						disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
-						disp.Departments = new List<Department>();
-						disp.Departments = DeptManager.GetAllDepartments().OrderBy(d => d.Name).ToList();
+						if (disp != null)
+						{
+							disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
+							disp.Departments = DeptManager.GetAllDepartments().OrderBy(d => d.Name).ToList();
+						}
+						else
+						{
+							disp = new vmInstructor();
+							ModelState.AddModelError("", "Failed to load details fo requested item.");
+						}
 						return View(disp);
 					}
 				}
@@ -222,23 +233,24 @@ namespace ClassProject.Controllers
 								}
 								else
 								{
-									ModelState.AddModelError("", "Unable to save Instructor. Please try again.");
-									return View(inst);
+									throw new DataException("Unable to save Instructor. Please try again.");
 								}
 							}
 							else
 							{
-								ModelState.AddModelError("", "Unable to save person. Please try again.");
-								return View(inst);
+								throw new DataException("Unable to save person. Please try again.");
 							}
 						}
 					}
 				}
 			}
-			catch (DataException)
+			catch (DataException ex)
 			{
-				//Log the error (add a variable name after DataException)
-				ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
+				ModelState.AddModelError("", ex.Message);
+			}
+			using (DeptManager)
+			{
+				inst.Departments = DeptManager.GetAllDepartments().OrderBy(d => d.Name).ToList();
 			}
 			return View(inst);
 		}
@@ -256,10 +268,16 @@ namespace ClassProject.Controllers
 					{
 						var item = InstManager.GetInstructorbyID(id);
 						var disp = Mapper.Map<vmInstructor>(item);
-						disp.Person = new vmPerson();
-						disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
-						disp.Department = new vmDepartment();
-						disp.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(item.DepartmentID));
+						if (disp != null)
+						{
+							disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
+							disp.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(item.DepartmentID));
+						}
+						else
+						{
+							disp = new vmInstructor();
+							ModelState.AddModelError("", "Failed to load details for requested object");
+						}
 						return View(disp);
 					}
 				}
@@ -281,14 +299,14 @@ namespace ClassProject.Controllers
 					{
 						return RedirectToAction("Index");
 					}
-					throw new DataException();
+					throw new DataException("Enable to delete intructor " + inst.Person.FullName + ". Please try again.");
 				}
 			}
-			catch (DataException)
+			catch (DataException ex)
 			{
-				ModelState.AddModelError("", "Unable to save changes. Try again, and if the problem persists see your system administrator.");
-				return View(inst);
+				ModelState.AddModelError("", ex.Message);
 			}
+			return View(inst);
 		}
 	}
 }
