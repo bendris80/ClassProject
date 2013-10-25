@@ -9,6 +9,7 @@ using FCTDataModel;
 
 namespace ClassProject.Controllers
 {
+	[Authorize()]
     public class BaseController : Controller
     {
         static BaseController()
