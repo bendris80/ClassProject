@@ -102,7 +102,7 @@ namespace ClassProject.Controllers
 		{
 			using (InstManager)
 			{
-				var item = InstManager.FindInstructorBooks(b => b.InstructorID == Convert.ToInt32(c[0]) && b.TextBookID == Convert.ToInt32(c[1])).FirstOrDefault();
+				var item = InstManager.FindInstructorBooks(b => b.InstructorID == Convert.ToInt32(c[1]) && b.TextBookID == Convert.ToInt32(c[0])).FirstOrDefault();
 				if (item != null)
 				{
 					var success = InstManager.RemoveInstructorBook(item);
@@ -111,7 +111,7 @@ namespace ClassProject.Controllers
 						ModelState.AddModelError("", "Unable to check in textbook. Try again.");
 					}
 				}
-				return RedirectToAction("Details", new { id = Convert.ToInt32(c[0]) });
+				return RedirectToAction("Details", new { id = Convert.ToInt32(c[1]) });
 			}
 		}
 
