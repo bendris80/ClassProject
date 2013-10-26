@@ -7,7 +7,7 @@ namespace ClassProject.Models
     public class vmPerson
     {
         
-        public int PersonID { get; set; }
+        public int ID { get; set; }
 
         [Required(ErrorMessage = "Last name is required."),
         Display(Name = "Last Name"),
@@ -19,6 +19,7 @@ namespace ClassProject.Models
         MaxLength(50)]
         public string FirstMidName { get; set; }
 
+        [Display(Name = "Name")]
         public string FullName
         {
             get

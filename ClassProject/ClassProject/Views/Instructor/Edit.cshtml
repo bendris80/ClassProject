@@ -1,10 +1,10 @@
 ﻿@model ClassProject.Models.vmInstructor
 
 @{
-    ViewBag.Title = "ViewPage1";
+    ViewBag.Title = "Edit " + Model.Person.FullName;
 }
 
-<h2>ViewPage1</h2>
+<h2>@ViewBag.Title</h2>
 
 <script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
 <script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
@@ -12,25 +12,13 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>vmInstructor</legend>
+        <legend>Details</legend>
 
         @Html.HiddenFor(model => model.ID)
+        @Html.HiddenFor(model => model.HireDate)
 
-        <div class="editor-label">
-            @Html.LabelFor(model => model.HireDate)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.HireDate)
-            @Html.ValidationMessageFor(model => model.HireDate)
-        </div>
-
-        <div class="editor-label">
-            @Html.LabelFor(model => model.Person.FirstMidName)
-        </div>
-        <div class="editor-field">
-            @Html.EditorFor(model => model.Person.FirstMidName)
-            @Html.ValidationMessageFor(model => model.Person.FirstMidName)
-        </div>
+            @Html.HiddenFor(model => model.Person.FirstMidName)
+        
         <div class="editor-label">
             @Html.LabelFor(model => model.Person.LastName)
         </div>

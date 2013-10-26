@@ -1,19 +1,19 @@
 ﻿@model IEnumerable<ClassProject.Models.vmEnrollment>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Enrollments";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
 </p>
 <table>
     <tr>
-        <th>CourseID
+        <th>Course ID
         </th>
-        <th>PersonID
+        <th>Student Name
         </th>
         <th>Grade
         </th>

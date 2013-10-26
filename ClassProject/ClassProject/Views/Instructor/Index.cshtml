@@ -1,10 +1,10 @@
 ﻿@model IEnumerable<ClassProject.Models.vmInstructor>
 
 @{
-    ViewBag.Title = "Index";
+    ViewBag.Title = "Instructors";
 }
 
-<h2>Index</h2>
+<h2>@ViewBag.Title</h2>
 
 <p>
     @Html.ActionLink("Create New", "Create")
@@ -12,13 +12,13 @@
 <table>
     <tr>
         <th>
-            HireDate
+            Hire Date
         </th>
         <th>
-            PersonName
+            Person Name
         </th>
         <th>
-            DepartmentName
+            Department Name
         </th>
         <th></th>
     </tr>
