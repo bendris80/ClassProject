@@ -256,14 +256,8 @@ C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassPr
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\AutoMapper.Net4.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\dotless.Core.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Core.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Owin.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Web.Infrastructure.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Owin.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Helpers.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Http.dll
@@ -277,10 +271,6 @@ C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassPr
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Antlr3.Runtime.pdb
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\AutoMapper.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.pdb
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Core.xml
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Owin.xml
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Helpers.xml
@@ -351,3 +341,5 @@ C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\b
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.xml
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Razor.xml
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.xml

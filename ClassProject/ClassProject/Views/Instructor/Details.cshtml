@@ -38,7 +38,7 @@
 		<ul>
 			@foreach (var item in Model.InstructorTextbooks)
    {
-	   using (Html.BeginForm("CheckOut", "Instructor", FormMethod.Post, new { id = item.ID }))
+	   using (Html.BeginForm("CheckIn", "Instructor", FormMethod.Post, new { id = item.ID }))
 	   {
 				<li class="display-field" style="list-style-type: disc">
 					@Html.HiddenFor(modelItem => item.ID)
