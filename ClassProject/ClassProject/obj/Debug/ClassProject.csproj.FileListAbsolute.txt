@@ -289,7 +289,6 @@ C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassPr
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.pdb
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Optimization.xml
-C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.csprojResolveAssemblyReference.cache
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.dll.config
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.dll
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.pdb
@@ -329,6 +328,7 @@ C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.xml
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Deployment.xml
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.csprojResolveAssemblyReference.cache
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.dll
 C:\Users\rpayne\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.pdb
 C:\Users\Roger\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.dll
