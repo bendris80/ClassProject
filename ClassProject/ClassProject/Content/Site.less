@@ -16,6 +16,7 @@
 @details_color: #000000;
 @details_label_color: #da532c;
 @helper_color: #007c03;
+@fh_dark:#04699C;
 //#endregion
 
 //#region action colors (can be editted)
@@ -23,6 +24,9 @@
 @high_color: rgb(255, 133, 0);
 @medium_color: rgb(56, 201, 0);
 @normal_color: rgb(0, 61, 255);
+
+//#Default Padding
+@default_padding:20px;
 
 .veryhigh
 {
@@ -44,6 +48,12 @@
 	color: @normal_color;
 }
 //#endregion
+
+input {
+    background:@fh_dark;
+    color:@menu_color;
+    border-radius:5px;
+}
 
 //#region main styles (DO NOT EDIT)
 *
@@ -154,6 +164,7 @@ p, ul
 {
 	margin-bottom: 20px;
 	line-height: 25px;
+    padding-left:@default_padding;
 }
 
 header,
@@ -221,10 +232,9 @@ nav,
 
 ul#menu
 {
-	border-bottom: 1px #5C87B2 solid;
 	padding: 0 0 2px;
 	position: relative;
-	margin: 0;
+	margin: 0 0 -5px;
 	text-align: right;
 	
 	z-index:1;
@@ -250,7 +260,16 @@ ul#menu
 			font-weight: bold;
 			text-decoration: none;
 			line-height: 2.8em;
-			background-color: #e8eef4;
+			
+            background: #aed0f2; /* Old browsers */
+            background: -moz-linear-gradient(top,  #aed0f2 0%, #ffffff 100%, #e8eef4 100%); /* FF3.6+ */
+            background: -webkit-gradient(linear, left top, left bottom, color-stop(0%,#aed0f2), color-stop(100%,#ffffff), color-stop(100%,#e8eef4)); /* Chrome,Safari4+ */
+            background: -webkit-linear-gradient(top,  #aed0f2 0%,#ffffff 100%,#e8eef4 100%); /* Chrome10+,Safari5.1+ */
+            background: -o-linear-gradient(top,  #aed0f2 0%,#ffffff 100%,#e8eef4 100%); /* Opera 11.10+ */
+            background: -ms-linear-gradient(top,  #aed0f2 0%,#ffffff 100%,#e8eef4 100%); /* IE10+ */
+            background: linear-gradient(to bottom,  #aed0f2 0%,#ffffff 100%,#e8eef4 100%); /* W3C */
+            filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#aed0f2', endColorstr='#e8eef4',GradientType=0 ); /* IE6-9 */
+
 			color: #034af3;
 			-webkit-border-radius: 4px 4px 0 0;
 			-moz-border-radius: 4px 4px 0 0;
@@ -277,6 +296,14 @@ ul#menu
 		}
 }
 //#endregion
+
+ #detailsColumn1 {
+     width: 45%;
+ }
+
+ #detailsColumn2 {
+     width: 54%;
+ }
 
 //#region Form Elements (can be editted)
 fieldset
@@ -415,6 +442,10 @@ div#title
 .editor-label
 {
 	margin: 5px;
+}
+
+.display-field {
+    height:40px;
 }
 
 .text-box
