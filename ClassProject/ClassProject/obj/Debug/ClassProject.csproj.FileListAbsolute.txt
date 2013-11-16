@@ -256,8 +256,14 @@ C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassPr
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\AutoMapper.Net4.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\dotless.Core.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Core.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Owin.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.SystemWeb.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Owin.Host.SystemWeb.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Web.Mvc.FixedDisplayModes.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.dll
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Owin.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Helpers.dll
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Http.dll
@@ -271,6 +277,10 @@ C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassPr
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Antlr3.Runtime.pdb
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\AutoMapper.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.pdb
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Core.xml
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.Owin.xml
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.AspNet.SignalR.SystemWeb.xml
+C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Microsoft.Owin.Host.SystemWeb.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.xml
 C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\System.Web.Helpers.xml
@@ -341,5 +351,44 @@ C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\b
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.xml
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Deployment.xml
 C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Razor.xml
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.dll
-C:\Ian Pritt\School\COM403D - Project Management & Planning\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.dll.config
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\ClassProject.pdb
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\Antlr3.Runtime.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.Net4.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\dotless.Core.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\Microsoft.Web.Infrastructure.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\PagedList.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Helpers.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Http.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Mvc.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Optimization.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Razor.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Deployment.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Razor.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\WebGrease.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\AutoMapper.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\EntityFramework.SqlServer.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\FCTDataModel.pdb
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\Newtonsoft.Json.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\PagedList.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Net.Http.Formatting.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Helpers.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Http.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Mvc.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Optimization.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.Razor.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Deployment.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\bin\System.Web.WebPages.Razor.xml
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.csprojResolveAssemblyReference.cache
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.dll
+C:\Users\Riven\Documents\ClassProject\ClassProject\ClassProject\obj\Debug\ClassProject.pdb
