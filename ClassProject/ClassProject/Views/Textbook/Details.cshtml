@@ -1,18 +1,18 @@
 ﻿@model ClassProject.Models.vmTextbook
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = Model.Name;
 }
 
-<h2>Details</h2>
+<h2>@ViewBag.Title</h2>
+
+<p>
+    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
+    @Html.ActionLink("Back to List", "Index")
+</p>
 
 <fieldset>
-    <legend>vmTextbook</legend>
-
-    <div class="display-label">Name</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Name)
-    </div>
+    <legend>Details</legend>
 
     <div class="display-label">Publisher</div>
     <div class="display-field">
@@ -36,7 +36,4 @@
         @Html.DisplayFor(model => model.PublishDate)
     </div>
 </fieldset>
-<p>
-    @Html.ActionLink("Edit", "Edit", new { id=Model.ID }) |
-    @Html.ActionLink("Back to List", "Index")
-</p>
+

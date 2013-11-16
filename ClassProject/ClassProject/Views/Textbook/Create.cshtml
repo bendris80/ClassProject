@@ -1,7 +1,7 @@
 ﻿@model ClassProject.Models.vmTextbook
 
 @{
-    ViewBag.Title = "Create a new textbook";
+    ViewBag.Title = "Create";
 }
 
 <h2>@ViewBag.Title</h2>
@@ -12,7 +12,7 @@
 @using (Html.BeginForm()) {
     @Html.ValidationSummary(true)
     <fieldset>
-        <legend>Details</legend>
+        <legend>Textbook</legend>
 
         <div class="editor-label">
             @Html.LabelFor(model => model.Name)
