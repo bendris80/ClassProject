@@ -396,13 +396,8 @@ div#title {
   font-size: 1.1em;
   display: inline-block;
   text-align: right;
-<<<<<<< HEAD
-  margin: 28px;
-  color: #034af3;
-=======
   margin: 10px;
   color: #ffffff;
->>>>>>> master
   float: right;
 }
 #logindisplay a:link {
