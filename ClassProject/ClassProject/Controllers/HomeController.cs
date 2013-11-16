@@ -12,7 +12,7 @@ namespace ClassProject.Controllers
     {
         public ActionResult Index()
         {
-            ViewBag.Message = "Welcome to Fountainhead College of Technology Data Portal";
+            ViewBag.Message = "Welcome to Book Trace";
 
             return View();
         }
