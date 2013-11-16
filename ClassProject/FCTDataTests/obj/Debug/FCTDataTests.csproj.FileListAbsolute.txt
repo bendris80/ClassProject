@@ -50,3 +50,5 @@ C:\Users\Riven\Documents\ClassProject\ClassProject\FCTDataTests\bin\Debug\Entity
 C:\Users\Riven\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.csprojResolveAssemblyReference.cache
 C:\Users\Riven\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.dll
 C:\Users\Riven\Documents\ClassProject\ClassProject\FCTDataTests\obj\Debug\FCTDataTests.pdb
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\EntityFramework.SqlServer.dll
+C:\Users\Johnson\workspace\classproject\ClassProject\ClassProject\FCTDataTests\bin\Debug\EntityFramework.SqlServer.xml
