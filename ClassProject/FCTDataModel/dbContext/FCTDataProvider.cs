@@ -34,7 +34,6 @@ namespace FCTDataModel
         }
 
         #region collections
-
         public DbSet<LogEntry> LogEntries { get; set; }
         public DbSet<Author> Authors { get; set; }
         public DbSet<Semester> Semesters { get; set; }
@@ -47,6 +46,7 @@ namespace FCTDataModel
         public DbSet<Publisher> Publishers { get; set; }
         public DbSet<Student> Students { get; set; }
         public DbSet<Textbook> Textbooks { get; set; }
+		public DbSet<TextbookDetail> TextbookDetails { get; set; }
 		public DbSet<InstructorBook> InstructorBooks { get; set; }
         #endregion
 

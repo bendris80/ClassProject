@@ -98,6 +98,7 @@
     <Compile Include="DataModels\Publisher.cs" />
     <Compile Include="DataModels\Semester.cs" />
     <Compile Include="DataModels\Textbook.cs" />
+    <Compile Include="DataModels\TextbookDetail.cs" />
     <Compile Include="dbContext\FCTDataProvider.cs" />
     <Compile Include="Managers\BaseManager.cs" />
     <Compile Include="Managers\SemesterManager.cs" />

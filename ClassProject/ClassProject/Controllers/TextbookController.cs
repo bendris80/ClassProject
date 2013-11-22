@@ -40,9 +40,15 @@ namespace ClassProject.Controllers
 			}
 		}
 
+		[HttpPost]
+		public ActionResult Index(vmTextbook vm)
+		{
+			JsonResult result = new JsonResult();
+			return result;
+		}
+
 		//
 		// GET: /Textbook/Details/5
-
 		public ActionResult Details(int id)
 		{
 			using (InstManager)

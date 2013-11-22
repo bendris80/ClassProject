@@ -18,6 +18,9 @@ namespace ClassProject.Models
 		[Display(Name="ISBN Number"), Required]
 		public string ISBNNumber { get; set; }
 
+		[Display(Name = "Price"), DisplayFormat(ApplyFormatInEditMode = true, DataFormatString = "{0:C}")]
+		public decimal Price { get; set; }
+
         public int PublisherID { get; set; }     
         public vmPublisher Publisher { get; set; }
 

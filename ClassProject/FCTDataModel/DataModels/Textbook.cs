@@ -23,5 +23,7 @@ namespace FCTDataModel
         public int AuthorID { get; set; }
         [Column("publish_date")]
         public DateTime PublishDate { get; set; }
+		[Column("price")]
+		public decimal Price { get; set; }
     }
 }
