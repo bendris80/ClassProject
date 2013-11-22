@@ -1,17 +1,9 @@
 ﻿@model ClassProject.Models.vmCourseSearch
-@if (false)
-    {
-        <script type="text/javascript" src="Scripts/NinJa/NinJa"></script>
-        <script type="text/javascript" src="Scripts/NinJa/NinJaAjax.js"></script>
-        <script type="text/javascript" src="Scripts/NinJa/NinJaGridView.js"></script>
-        <script type="text/javascript" src="Scripts/NinJa/NinJaUI.js"></script>
-        <script type="text/javascript" src="Scripts/NinJa/NinJaQuery.js"></script>
-    }
 @section Scripts{
     
     <script type="text/javascript">
         var request = new AjaxRequest();
-        request.Url = "/Course/Index";
+        request.Url = "Course/Index";
         request.Verb = Verb.Post;
         
         request.OnSuccess.Add(bind);

@@ -14,6 +14,11 @@
 <fieldset>
     <legend>Details</legend>
 
+	<div class="display-label">ISBN Number</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.ISBNNumber)
+	</div>
+
     <div class="display-label">Publisher</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Publisher.Name)

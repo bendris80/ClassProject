@@ -13,6 +13,8 @@ namespace FCTDataModel
     {
         [Column("id"), Key]
         public int ID { get; set; }
+		[Column("isbn_num")]
+		public string ISBNNumber { get; set; }
         [Column("name")]
         public string Name { get; set; }
         [Column("publisher_id")]

@@ -15,6 +15,9 @@ namespace ClassProject.Models
         [Display(Name = "Name")]
         public string Name { get; set; }
 
+		[Display(Name="ISBN Number"), Required]
+		public string ISBNNumber { get; set; }
+
         public int PublisherID { get; set; }     
         public vmPublisher Publisher { get; set; }
 
