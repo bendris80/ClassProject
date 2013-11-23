@@ -1,51 +1,70 @@
-﻿@model IEnumerable<ClassProject.Models.vmTextbook>
+﻿@model ClassProject.Models.vmTextbookSearch
+@section Scripts{
+    
+    <script type="text/javascript">
+        var request = new AjaxRequest();
+        request.Url = "Textbook/Index";
+        request.Verb = Verb.Post;
 
+        request.OnSuccess.Add(bind);
+        request.OnError.Add(error);
+
+        function getfields() {
+            $GridView("courses").Loading("Loading...");
+            request.Post();
+        }
+
+        function bind(e) {
+            var list = e.ResponseObject;
+            $GridView("courses").Bind(e.ResponseObject);
+        }
+        function error() {
+            $GridView("courses").Loading("An error occurred during the search.");
+        }
+
+
+        @*Page.OnLoad.Add(function () {
+            $Button("vend").OnClick.Add(function () {
+                Page.Href("@Url.Action("Create", "Vendor", "")");
+            });
+        }); *@      
+    </script>
+}
 @{
-    ViewBag.Title = "Textbook";
+    ViewBag.Title = "Textbooks";
 }
 
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @Html.ActionLink("Add a Textbook", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            Name
-        </th>
-        <th>
-            Author
-        </th>
-        <th>
-            Publisher
-        </th>       
-        <th>
-            Publish Date
-        </th>
-        <th></th>
-    </tr>
-
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Name)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Author.Person.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Publisher.Name)
-        </td>        
-        <td>
-            @Html.DisplayFor(modelItem => item.PublishDate)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+@using (Html.BeginForm())
+{
+    <fieldset>
+        <legend>Find Textbooks</legend>
+        <div class="editor-label">
+            Search By
+        </div>
+        <div class="editor-field">
+            @Html.TextBoxFor(model => model.SearchText, new { @placeholder = "ISBN Number, Title, Author", style = "width:400px" })
+        </div>
+        <p style="text-align: center">
+            <input id="search" type="button" onclick="getfields()" value="Search" />
+        </p>
+    </fieldset>
 }
-
+<table class="gridview" id="courses" width="99%">
+    <thead>
+        <tr>
+            <th width="50" data="Textbook/Details/{ID}" display="Details" type="link"></th>
+            <th width="50" data="Textbook/Edit/{ID}" display="Edit" type="link"></th>
+            <th width="50" data="Textbook/Delete/{ID}" display="Delete" type="link"></th>
+            <th data="ISBNNumber">ISBN</th>
+            <th data="Name">Title</th>
+            <th data="Price">Price</th>
+            <th data="AuthorName">Author</th>
+            <th data="Publisher">Publisher</th>
+        </tr>
+    </thead>
 </table>
