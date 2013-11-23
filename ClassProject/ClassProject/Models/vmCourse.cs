@@ -50,7 +50,17 @@ namespace ClassProject.Models
 
     public class vmCourseSearch
     {
-        
+        public vmCourseSearch()
+        {
+            SearchText = "";
+            Departments = new List<Department>();
+            Instructors = new Dictionary<int, string>();
+        }
+        public string SearchText { get; set; }
+        public int SelectedDept { get; set; }
+        public List<Department> Departments { get; set; }
+        public int SelectedInst { get; set; }
+        public Dictionary<int, string> Instructors { get; set; }
     }
 
 }
