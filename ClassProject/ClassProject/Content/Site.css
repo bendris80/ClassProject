@@ -481,13 +481,13 @@ div#title {
   font-size: 9pt;
 }
 .gridview tbody tr td:nth-child(even) {
-  background-color: #edf1f6;
+  background-color: #cccccc;
 }
 .gridview tbody tr:nth-child(even) {
-  background-color: #FFFFCC;
+  background-color: #cccccc;
 }
 .gridview tbody tr:nth-child(even) td:nth-child(even) {
-  background-color: #edf1dd;
+  background-color: #EDF1F6;
 }
 .gridview .selected td {
   background-color: #e8b11e !important;
@@ -522,6 +522,7 @@ table {
   border-collapse: collapse;
   width: 100%;
   margin: 8px;
+  background-color: #EDF1F6;
 }
 table td {
   border-top: 1px solid #e0e0e0;
