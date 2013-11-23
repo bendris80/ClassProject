@@ -1,11 +1,11 @@
 ﻿@model ClassProject.Models.vmCourseSearch
 @section Scripts{
-    
+
     <script type="text/javascript">
         var request = new AjaxRequest();
         request.Url = "Course/Index";
         request.Verb = Verb.Post;
-        
+
         request.OnSuccess.Add(bind);
         request.OnError.Add(error);
 
@@ -21,7 +21,7 @@
         function error() {
             $GridView("courses").Loading("An error occurred during the search.");
         }
-        
+
 
         @*Page.OnLoad.Add(function () {
             $Button("vend").OnClick.Add(function () {
@@ -44,7 +44,33 @@
 {
     <fieldset>
         <legend>Find Courses</legend>
-        <p>
+        <div style="display: inline-block">
+            <div class="editor-label">
+                Search By
+            </div>
+            <div class="editor-field">
+                @Html.TextBoxFor(model => model.SearchText, new { @placeholder = "Course Title", style = "width:400px" })
+            </div>
+        </div>
+        <div style="display: inline-block">
+            <div class="editor-label">
+                Department
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.SelectedDept, new SelectList(Model.Departments, "ID", "Name"), "Any")
+            </div>
+        </div>
+        <div style="display: inline-block">
+            <div class="editor-label">
+                Instructor
+            </div>
+            <div class="editor-field">
+                @Html.DropDownListFor(model => model.SelectedInst, new SelectList(Model.Instructors, "Key", "Value"), "Any")
+            </div>
+        </div>
+        <br />
+        <br />
+        <p style="text-align: center">
             <input id="search" type="button" onclick="getfields()" value="Search" />
         </p>
     </fieldset>

@@ -17,8 +17,28 @@ namespace ClassProject.Controllers
 		[HttpGet]
 		public ActionResult Index()
 		{
-			var disp = new vmCourseSearch();
-			return View(disp);
+            using (CoursesManager)
+            {
+                using (DeptManager)
+                {
+                    using (InstManager)
+                    {
+                        using (PeopleManager)
+                        {
+                                var disp = new vmCourseSearch();
+                                disp.Departments = DeptManager.GetAllDepartments().ToList();
+                                var inst = InstManager.GetAllInstructors();
+                                var people = PeopleManager.GetAllPeople();
+
+                                var instr = from instructor in inst
+                                            join person in people on instructor.PersonID equals person.ID
+                                            select new KeyValuePair<int, string>(instructor.ID, string.Format("{0}, {1}", person.LastName, person.FirstMidName));
+                                disp.Instructors = instr.ToDictionary(t => t.Key, t => t.Value);
+                                return View(disp);
+                        }
+                    }
+                }
+            }
 		}
 		[HttpPost]
 		public ActionResult Index(vmCourseSearch vm)
@@ -27,7 +47,10 @@ namespace ClassProject.Controllers
 			using (CoursesManager)
 			{
 				courses = CoursesManager.GetAllCourseDetails();
-				//var dispcourses = Mapper.Map<IEnumerable<vmCourse>>(courses);
+                if (vm.SelectedDept > 0)
+                {
+                    
+                }
 				JsonResult result = Json(courses.ToList());
 				return result;
 			}
