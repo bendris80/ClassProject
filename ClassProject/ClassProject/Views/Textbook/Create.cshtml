@@ -1,19 +1,21 @@
 ﻿@model ClassProject.Models.vmTextbook
 
 @{
-	ViewBag.Title = "Create";
+	ViewBag.Title = "Add a New Textbook";
 }
-
+@section Scripts{
+	<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
+	<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
+}
 <h2>@ViewBag.Title</h2>
-
-<script src="@Url.Content("~/Scripts/jquery.validate.min.js")" type="text/javascript"></script>
-<script src="@Url.Content("~/Scripts/jquery.validate.unobtrusive.min.js")" type="text/javascript"></script>
-
+<div>
+	@Html.ActionLink("Back to List", "Index")
+</div>
 @using (Html.BeginForm())
 {
 	@Html.ValidationSummary(true)
 	<fieldset>
-		<legend>Textbook</legend>
+		<legend>Details</legend>
 
 		<div class="editor-label">
 			@Html.LabelFor(model => model.ISBNNumber)
@@ -27,7 +29,7 @@
 			@Html.LabelFor(model => model.Name)
 		</div>
 		<div class="editor-field">
-			@Html.EditorFor(model => model.Name)
+			@Html.TextBoxFor(model => model.Name, new { style = "width:500px" })
 			@Html.ValidationMessageFor(model => model.Name)
 		</div>
 		<div class="editor-label">
@@ -38,58 +40,60 @@
 			@Html.ValidationMessageFor(model => model.Price)
 		</div>
 		<div class="editor-label">
-			@Html.LabelFor(model => model.Publisher.Name)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Publisher.Name)
-			@Html.ValidationMessageFor(model => model.Publisher.Name)
-		</div>
-
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Publisher.City)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Publisher.City)
-			@Html.ValidationMessageFor(model => model.Publisher.City)
-		</div>
-
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Publisher.State)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Publisher.State)
-			@Html.ValidationMessageFor(model => model.Publisher.State)
-		</div>
-
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Author.Person.FirstMidName)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Author.Person.FirstMidName)
-			@Html.ValidationMessageFor(model => model.Author.Person.FirstMidName)
-		</div>
-		<div class="editor-label">
-			@Html.LabelFor(model => model.Author.Person.LastName)
-		</div>
-		<div class="editor-field">
-			@Html.EditorFor(model => model.Author.Person.LastName)
-			@Html.ValidationMessageFor(model => model.Author.Person.LastName)
-		</div>
-
-		<div class="editor-label">
 			@Html.LabelFor(model => model.PublishDate)
 		</div>
 		<div class="editor-field">
 			@Html.EditorFor(model => model.PublishDate)
 			@Html.ValidationMessageFor(model => model.PublishDate)
 		</div>
+		<br />
+		<div class="column">
+			<h3>Publisher</h3>
+			<div class="editor-label">
+				@Html.LabelFor(model => model.Publisher.Name)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Publisher.Name)
+				@Html.ValidationMessageFor(model => model.Publisher.Name)
+			</div>
 
-		<p>
+			<div class="editor-label">
+				@Html.LabelFor(model => model.Publisher.City)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Publisher.City)
+				@Html.ValidationMessageFor(model => model.Publisher.City)
+			</div>
+
+			<div class="editor-label">
+				@Html.LabelFor(model => model.Publisher.State)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Publisher.State)
+				@Html.ValidationMessageFor(model => model.Publisher.State)
+			</div>
+		</div>
+		<div class="column">
+			<h3>Author</h3>
+			<div class="editor-label">
+				@Html.LabelFor(model => model.Author.Person.FirstMidName)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Author.Person.FirstMidName)
+				@Html.ValidationMessageFor(model => model.Author.Person.FirstMidName)
+			</div>
+			<div class="editor-label">
+				@Html.LabelFor(model => model.Author.Person.LastName)
+			</div>
+			<div class="editor-field">
+				@Html.EditorFor(model => model.Author.Person.LastName)
+				@Html.ValidationMessageFor(model => model.Author.Person.LastName)
+			</div>
+		</div>
+		<p style="text-align: center">
 			<input type="submit" value="Create" />
 		</p>
 	</fieldset>
 }
 
-<div>
-	@Html.ActionLink("Back to List", "Index")
-</div>
+

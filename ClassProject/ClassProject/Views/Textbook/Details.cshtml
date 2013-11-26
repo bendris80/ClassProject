@@ -18,10 +18,19 @@
 	<div class="display-field">
 		@Html.DisplayFor(model => model.ISBNNumber)
 	</div>
+	<div class="display-label">Author</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.Author.Person.FullName)
+	</div>
 	<div class="display-label">Price</div>
 	<div class="display-field">
 		@Html.DisplayFor(model => model.Price)
 	</div>
+	<div class="display-label">Publish Date</div>
+	<div class="display-field">
+		@Html.DisplayFor(model => model.PublishDate)
+	</div>
+
     <div class="display-label">Publisher</div>
     <div class="display-field">
         @Html.DisplayFor(model => model.Publisher.Name)
@@ -34,14 +43,9 @@
     <div class="display-field">
         @Html.DisplayFor(model => model.Publisher.State)
     </div>
-    <div class="display-label">Author</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.Author.Person.FullName)
-    </div>
 
-    <div class="display-label">Publish Date</div>
-    <div class="display-field">
-        @Html.DisplayFor(model => model.PublishDate)
-    </div>
+    
+
+    
 </fieldset>
 
