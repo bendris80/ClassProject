@@ -17,24 +17,33 @@ namespace ClassProject.Controllers
 		[HttpGet]
 		public ActionResult Index()
 		{
-			using (PeopleManager)
+			using (DeptManager)
 			{
-				using (InstManager)
+				var disp = new vmInstructorSearch();
+				disp.Departments = DeptManager.GetAllDepartments().ToList();
+				return View(disp);
+			}
+		}
+
+		[HttpPost]
+		public ActionResult Index(vmInstructorSearch vm)
+		{
+			List<InstructorDetail> toreturn = new List<InstructorDetail>();
+			IEnumerable<InstructorDetail> instructors = null;
+			using (InstManager)
+			{
+				instructors = InstManager.GetAllTextbookDetails();
+				if (vm.SelectedDept > 0)
 				{
-					using (DeptManager)
-					{
-						var items = InstManager.GetAllInstructors();
-						var disp = Mapper.Map<IEnumerable<vmInstructor>>(items);
-						foreach (var d in disp)
-						{
-							d.Person = new vmPerson();
-							d.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(d.PersonID));
-							d.Department = new vmDepartment();
-							d.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(d.DepartmentID));
-						}
-						return View(disp);
-					}
+					instructors = instructors.Where(inst => inst.DepartmentID == vm.SelectedDept);
 				}
+				if (!string.IsNullOrEmpty(vm.SearchText))
+				{
+					instructors = instructors.Where(inst => inst.FullName.Contains(vm.SearchText));
+				}
+
+				JsonResult ret = Json(instructors.ToList());
+				return ret;
 			}
 		}
 
@@ -54,7 +63,7 @@ namespace ClassProject.Controllers
 							var item = InstManager.GetInstructorbyID(id);
 							var disp = Mapper.Map<vmInstructor>(item);
 							if (disp != null)
-							{					
+							{
 								disp.Person = Mapper.Map<vmPerson>(PeopleManager.GetPersonbyID(item.PersonID));
 								disp.Department = Mapper.Map<vmDepartment>(DeptManager.GetDepartmentbyID(item.DepartmentID));
 								disp.Textbooks = TBManager.GetAllTextbooks().ToList();

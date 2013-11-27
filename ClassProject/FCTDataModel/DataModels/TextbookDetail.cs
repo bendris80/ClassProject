@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace FCTDataModel
 {
-	[Table("vwTextbookDetails")]
+	[Table("vwTextbookDetail")]
 	public class TextbookDetail
 	{
 		[Column("id"), Key]

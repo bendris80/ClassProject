@@ -48,6 +48,7 @@ namespace FCTDataModel
         public DbSet<Textbook> Textbooks { get; set; }
 		public DbSet<TextbookDetail> TextbookDetails { get; set; }
 		public DbSet<InstructorBook> InstructorBooks { get; set; }
+		public DbSet<InstructorDetail> InstructorDetails { get; set; }
         #endregion
 
         #region core data provider
