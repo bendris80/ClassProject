@@ -93,6 +93,7 @@
     <Compile Include="DataModels\Enrollment.cs" />
     <Compile Include="DataModels\Instructor.cs" />
     <Compile Include="DataModels\InstructorBook.cs" />
+    <Compile Include="DataModels\InstructorDetail.cs" />
     <Compile Include="DataModels\LogEntry.cs" />
     <Compile Include="DataModels\Person.cs" />
     <Compile Include="DataModels\Publisher.cs" />

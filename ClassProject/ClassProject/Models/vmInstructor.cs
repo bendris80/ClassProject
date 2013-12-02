@@ -35,4 +35,16 @@ namespace ClassProject.Models
 		public List<Textbook> Textbooks { get; set; }
 		public List<vmTextbook> InstructorTextbooks { get; set; }
     }
+
+	public class vmInstructorSearch
+	{
+		public vmInstructorSearch()
+        {
+            SearchText = "";
+            Departments = new List<Department>();
+        }
+        public string SearchText { get; set; }
+        public int SelectedDept { get; set; }
+        public List<Department> Departments { get; set; }
+	}
 }

@@ -1,12 +1,11 @@
 ﻿@model ClassProject.Models.vmTextbook
 
 @{
-    ViewBag.Title = "Delete";
+    ViewBag.Title = "Delete Textbook";
 }
 
 <h2>@ViewBag.Title</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 @using (Html.BeginForm()) {
 
     <p>
@@ -15,7 +14,7 @@
     </p>
 
 <fieldset>
-    <legend>Textbook</legend>
+    <legend>Are you sure you want to delete this?</legend>
     @Html.HiddenFor(model => model.ID)
     <div class="display-label">ISBN Number</div>
 	<div class="display-field">

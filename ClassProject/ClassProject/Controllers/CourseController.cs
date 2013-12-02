@@ -43,14 +43,23 @@ namespace ClassProject.Controllers
 		[HttpPost]
 		public ActionResult Index(vmCourseSearch vm)
 		{
+			List<CourseDetail> toreturn = new List<CourseDetail>();
 			IEnumerable<CourseDetail> courses = null;
 			using (CoursesManager)
 			{
 				courses = CoursesManager.GetAllCourseDetails();
                 if (vm.SelectedDept > 0)
                 {
-                    
+					courses = courses.Where(c => c.DepartmentID == vm.SelectedDept);
                 }
+				if (vm.SelectedInst > 0)
+				{
+					courses = courses.Where(c => c.InstructorID == vm.SelectedInst);
+				}
+				if (!string.IsNullOrEmpty(vm.SearchText))
+				{
+					courses = courses.Where(c => c.Title.Contains(vm.SearchText));
+				}
 				JsonResult result = Json(courses.ToList());
 				return result;
 			}

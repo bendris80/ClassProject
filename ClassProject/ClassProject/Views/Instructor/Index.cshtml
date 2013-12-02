@@ -1,5 +1,35 @@
-﻿@model IEnumerable<ClassProject.Models.vmInstructor>
+﻿@model ClassProject.Models.vmInstructorSearch
+@section Scripts{
 
+	<script type="text/javascript">
+		var request = new AjaxRequest();
+		request.Url = "Instructor/Index";
+		request.Verb = Verb.Post;
+
+		request.OnSuccess.Add(bind);
+		request.OnError.Add(error);
+
+		function getfields() {
+			$GridView("courses").Loading("Loading...");
+			request.Post();
+		}
+
+		function bind(e) {
+			var list = e.ResponseObject;
+			$GridView("courses").Bind(e.ResponseObject);
+		}
+		function error() {
+			$GridView("courses").Loading("An error occurred during the search.");
+		}
+
+
+		@*Page.OnLoad.Add(function () {
+            $Button("vend").OnClick.Add(function () {
+                Page.Href("@Url.Action("Create", "Vendor", "")");
+            });
+        }); *@      
+	</script>
+}
 @{
     ViewBag.Title = "Instructors";
 }
@@ -7,39 +37,47 @@
 <h2>@ViewBag.Title</h2>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+	@Html.ActionLink("Create New", "Create")
 </p>
-<table>
-    <tr>
-        <th>
-            Hire Date
-        </th>
-        <th>
-            Person Name
-        </th>
-        <th>
-            Department Name
-        </th>
-        <th></th>
-    </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.HireDate)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Person.FullName)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Department.Name)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.ID }) |
-            @Html.ActionLink("Details", "Details", new { id=item.ID }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.ID })
-        </td>
-    </tr>
+@using (Html.BeginForm())
+{
+	<fieldset>
+		<legend>Find Instructors</legend>
+		<div style="display: inline-block">
+			<div class="editor-label">
+				Search By
+			</div>
+			<div class="editor-field">
+				@Html.TextBoxFor(model => model.SearchText, new { @placeholder = "Instructor Name", style = "width:400px" })
+			</div>
+		</div>
+		<div style="display: inline-block">
+			<div class="editor-label">
+				Department
+			</div>
+			<div class="editor-field">
+				@Html.DropDownListFor(model => model.SelectedDept, new SelectList(Model.Departments, "ID", "Name"), "Any")
+			</div>
+		</div>
+		<br />
+		<br />
+		<p style="text-align: center">
+			<input id="search" type="button" onclick="getfields()" value="Search" />
+		</p>
+	</fieldset>
 }
 
+<table class="gridview" id="courses" width="99%">
+	<thead>
+		<tr>
+			<th width="50" data="Instructor/Details/{ID}" display="Details" type="link"></th>
+			<th width="50" data="Instructor/Edit/{ID}" display="Edit" type="link"></th>
+			<th width="50" data="Instructor/Delete/{ID}" display="Delete" type="link"></th>
+			
+			<th data="FullName">Name</th>
+			<th data="DepartmentName">Department</th>
+			<th data="HireDate">Hired</th>
+		</tr>
+	</thead>
 </table>

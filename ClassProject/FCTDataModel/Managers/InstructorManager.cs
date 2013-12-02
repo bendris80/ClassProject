@@ -47,6 +47,11 @@ namespace FCTDataModel
         }
 
         #region Instructor
+		public IEnumerable<InstructorDetail> GetAllTextbookDetails()
+		{
+			return db.InstructorDetails;
+		}
+
         public IEnumerable<Instructor> GetAllInstructors()
         {
             return db.Instructors;
