@@ -206,6 +206,8 @@
     <Content Include="Content\Images\backgrounds\scrollbar\track.png" />
     <Content Include="Content\Images\backgrounds\scrollbar\track2.png" />
     <Content Include="Content\Images\backgrounds\scrollbar\trackbg.png" />
+    <Content Include="Content\Images\bookTraceLogo.png" />
+    <Content Include="Content\Images\FountianHeadLogo.png" />
     <Content Include="Content\reset.css" />
     <Content Include="Content\Site.css">
       <DependentUpon>Site.less</DependentUpon>
